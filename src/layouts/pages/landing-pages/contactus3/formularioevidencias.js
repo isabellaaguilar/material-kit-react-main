@@ -98,6 +98,10 @@ const Formulario = () => {
               Haz clic aquí para descargar el archivo
             </a>
           </Grid>
+         
+
+
+                 
           <Grid container item xs={12} lg={7} sx={{ mx: "auto" }}>
             <MKBox width="100%" component="form" method="post" autocomplete="off">
               <MKBox p={3}>
@@ -109,7 +113,13 @@ const Formulario = () => {
                       onChange={(event) => convertiraBase64(event.target.files)}
                       fullWidth
                     />
+
+
                   </Grid>
+
+
+
+                  
                   {/* <Grid item xs={12} md={6}>
                   <MKInput variant="standard" label="Número de telefono" type="number"  name="telefono" onChange={handleInputChange} fullWidth />
                 </Grid> */}
