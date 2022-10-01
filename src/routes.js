@@ -46,6 +46,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
  import ContactUs2 from "layouts/pages/landing-pages/contactus2/formulariocertificado";
+  import ContactUs3 from "layouts/pages/landing-pages/contactus3/formularioevidencias";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
 
@@ -103,6 +104,11 @@ const routes = [
             name: "Formulario solicitante certificado",
             route: "/pages/landing-pages/formulario-certificado",
             component: <ContactUs2 />,
+          },
+            {
+            name: "Formulario evidencias",
+            route: "/pages/landing-pages/formulario-evidencias",
+            component: <ContactUs3 />,
           },
         ],
       },
