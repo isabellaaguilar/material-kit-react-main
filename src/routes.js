@@ -53,7 +53,7 @@ import SignIn from "layouts/pages/authentication/sign-in";
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
  import Generador from "layouts/sections/generador";
-
+import mapa from "layouts/sections/mapa";
 import Features from "layouts/sections/page-sections/featuers";
 import Navbars from "layouts/sections/navigation/navbars";
 import NavTabs from "layouts/sections/navigation/nav-tabs";
@@ -71,6 +71,8 @@ import Dropdowns from "layouts/sections/elements/dropdowns";
 import ProgressBars from "layouts/sections/elements/progress-bars";
 import Toggles from "layouts/sections/elements/toggles";
 import Typography from "layouts/sections/elements/typography";
+import { Home } from "@mui/icons-material";
+import Mapa from "layouts/sections/mapa";
 
 
 const routes = [
@@ -134,6 +136,11 @@ const routes = [
             name: "Generador",
             route: "/sections/page-sections/generador",
             component: <Generador />,
+          },
+               {
+            name: "Mapa",
+            route: "/sections/mapa",
+            component: <Mapa />,
           },
   
          

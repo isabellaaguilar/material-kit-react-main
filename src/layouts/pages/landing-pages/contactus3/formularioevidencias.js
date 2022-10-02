@@ -107,14 +107,25 @@ const Formulario = () => {
               <MKBox p={3}>
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
+                    <MKTypography variant="h5" mb={1}>
+                       subir pdf con imagenes
+                     </MKTypography>
                     <MKInput
                       type="file"
                       name="Documento"
                       onChange={(event) => convertiraBase64(event.target.files)}
                       fullWidth
                     />
-
-
+                    <MKTypography variant="h5" mb={1}>
+                      subir pdf con link de videos
+                     </MKTypography>
+                      <MKInput
+                      type="file"
+                      name="Documento"
+                      onChange={(event) => convertiraBase64(event.target.files)}
+                      fullWidth
+                    />
+                    
                   </Grid>
 
 
