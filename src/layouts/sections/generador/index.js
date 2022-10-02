@@ -31,7 +31,7 @@ function generador() {
 
  async  function salir(){
       var res = await axios({
-        url:'http://localhost:3001/generador',
+        url:'http://localhost:3001/api/generador',
          method: 'GET',
         mode: 'no-cors'
     })
