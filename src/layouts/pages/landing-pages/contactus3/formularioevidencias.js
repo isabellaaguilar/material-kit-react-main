@@ -45,7 +45,7 @@ const Formulario = () => {
         var base64 = reader.result;
         ArrayAuxiliar = base64.split(",");
         console.log(ArrayAuxiliar[1]);
-
+console.log(Documento)
         setDatos({
           ...datos,
           Documento: ArrayAuxiliar[1],
@@ -60,8 +60,9 @@ const Formulario = () => {
     console.log("envio");
     console.log(datos)
     axios
-      .post("/crearUsuario", {
+      .post("http://localhost:3001/api/crearEvidencias", {
         Documento: datos.Documento,
+   
       })
       .then(function (response) {
         console.log(response);
@@ -69,9 +70,11 @@ const Formulario = () => {
       .catch(function (error) {
         console.log(error);
       });
-
+   
+debugger
     console.log(datos.Documento);
     event.preventDefault();
+      
   };
 
   return (
@@ -92,7 +95,7 @@ const Formulario = () => {
               Completa con tu informacion
             </MKTypography>
             <a
-              href=" https://drive.google.com/file/d/10bQh24vWfUbipyF7Bb3aIrjP3vaQmoCj/view?usp=sharing "
+              href=" https://drive.google.com/file/d/14Tp9fwKvzjnXK4NkHF2i7HF4u2Xt4Kn3/view?usp=sharing "
               download="Swiper, el zorro ladrón"
             >
               Haz clic aquí para descargar el archivo
@@ -108,7 +111,7 @@ const Formulario = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <MKTypography variant="h5" mb={1}>
-                       subir pdf con imagenes
+                       subir imagenes
                      </MKTypography>
                     <MKInput
                       type="file"
@@ -117,7 +120,16 @@ const Formulario = () => {
                       fullWidth
                     />
                     <MKTypography variant="h5" mb={1}>
-                      subir pdf con link de videos
+                      subir videos
+                     </MKTypography>
+                      <MKInput
+                      type="file"
+                      name="Documento"
+                      onChange={(event) => convertiraBase64(event.target.files)}
+                      fullWidth
+                    />
+                     <MKTypography variant="h5" mb={1}>
+                      subir pdf
                      </MKTypography>
                       <MKInput
                       type="file"
