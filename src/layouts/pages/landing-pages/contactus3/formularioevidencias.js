@@ -71,7 +71,7 @@ console.log(Documento)
         console.log(error);
       });
    
-debugger
+
     console.log(datos.Documento);
     event.preventDefault();
       

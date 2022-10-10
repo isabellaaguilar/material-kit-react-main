@@ -45,14 +45,17 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
- import ContactUs2 from "layouts/pages/landing-pages/contactus2/formulariocertificado";
-  import ContactUs3 from "layouts/pages/landing-pages/contactus3/formularioevidencias";
+import ContactUs2 from "layouts/pages/landing-pages/contactus2/formulariocertificado";
+import ContactUs3 from "layouts/pages/landing-pages/contactus3/formularioevidencias";
 import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
+import FormsAdmin from "layouts/pages/landing-pages/formsadmin/formularioempresaadmin";
+import FormsAdmintabla from "layouts/pages/landing-pages/formsadmin/solicitudespendientes";
+
 
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
- import Generador from "layouts/sections/generador";
+import Generador from "layouts/sections/generador";
 import mapa from "layouts/sections/mapa";
 import Features from "layouts/sections/page-sections/featuers";
 import Navbars from "layouts/sections/navigation/navbars";
@@ -76,373 +79,388 @@ import Mapa from "layouts/sections/mapa";
 
 
 const routes = [
-  
- 
-    {
-        name: "Información",
-        collapse: [
-          {
-            name: "Acerca de nosotros",
-            route: "/pages/landing-pages/about-us",
-            component: <AboutUs />,
-          },
-          {
-            name: "Presentación",
-            route: "pitch.com/public/9312ed0f-f1d7-4451-8a51-ec9944d1e47f",
-            component: <Author />,
-          },
-        ],
-      },
-      //contact us
+
+
+  {
+    name: "Información",
+    collapse: [
       {
-        name: "Formularios solicitantes",
-        collapse: [
-          {
-            name: "Formulario Solicitantes usuario empresa",
-            route: "/pages/landing-pages/registro-empresa",
-            component: <ContactUs />,
-          },
-           {
-            name: "Formulario solicitante certificado",
-            route: "/pages/landing-pages/formulario-certificado",
-            component: <ContactUs2 />,
-          },
-            {
-            name: "Formulario evidencias",
-            route: "/pages/landing-pages/formulario-evidencias",
-            component: <ContactUs3 />,
-          },
-        ],
+        name: "Acerca de nosotros",
+        route: "/pages/landing-pages/about-us",
+        component: <AboutUs />,
       },
-
-      //sign in
       {
-        name: "account",
-        collapse: [
-          {
-            name: "sign in",
-            route: "/pages/authentication/sign-in",
-            component: <SignIn />,
-          },
-        ],
+        name: "Presentación",
+        route: "pitch.com/public/9312ed0f-f1d7-4451-8a51-ec9944d1e47f",
+        component: <Author />,
       },
-   
-
-         {
-        name: "generador",
-        collapse: [
-          
-           {
-            name: "Generador",
-            route: "/sections/page-sections/generador",
-            component: <Generador />,
-          },
-               {
-            name: "Mapa",
-            route: "/sections/mapa",
-            component: <Mapa />,
-          },
-  
-         
-        ],
+    ],
+  },
+  //contact us
+  {
+    name: "Formularios solicitantes",
+    collapse: [
+      {
+        name: "Formulario Solicitantes usuario empresa",
+        route: "/pages/landing-pages/registro-empresa",
+        component: <ContactUs />,
       },
-       
+      {
+        name: "Formulario solicitante certificado",
+        route: "/pages/landing-pages/formulario-certificado",
+        component: <ContactUs2 />,
+      },
+      {
+        name: "Formulario evidencias",
+        route: "/pages/landing-pages/formulario-evidencias",
+        component: <ContactUs3 />,
+      },
+
+    ],
+  },
+  {
+    name: "Formularios administrador",
+    collapse: [
+      {
+        name: "Formulario inscripción empresas admin",
+        route: "/pages/landing-pages/formularioempresaadmin",
+        component: <FormsAdmin />,
+      },
+      {
+        name: "Solicitudes pendientes",
+        route: "/pages/landing-pages/solicitudespendientes",
+        component: <FormsAdmintabla />,
+      },
+    ],
+  },
+  //sign in
+  {
+    name: "account",
+    collapse: [
+      {
+        name: "sign in",
+        route: "/pages/authentication/sign-in",
+        component: <SignIn />,
+      },
+    ],
+  },
 
 
-//   {
-//     // name: "sections",
-//     // icon: <Icon>view_day</Icon>,
-//     collapse: [
-//       {
-//         // name: "page sections",
-//         // description: "See all sections",
-//         // dropdown: true,
-//         collapse: [
-//           {
-//             // name: "page headers",
-//             // route: "/sections/page-sections/page-headers",
-//             // component: <PageHeaders />,
-//           },
-//           {
-//             // name: "features",
-//             // route: "/sections/page-sections/features",
-//             // component: <Features />,
-//           },
-//           {
-//             name: "Generador",
-//             route: "/sections/page-sections/generador",
-//             component: <Generador />,
-//           },
-//         ],
-//       },
-//       {
-//         // name: "navigation",
-//         // description: "See all navigations",
-//         // dropdown: true,
-//         collapse: [
-//           {
-//             // name: "navbars",
-//             // route: "/sections/navigation/navbars",
-//             // component: <Navbars />,
-//           },
-//           {
-//             // name: "nav tabs",
-//             // route: "/sections/navigation/nav-tabs",
-//             // component: <NavTabs />,
-//           },
-//           {
-//             // name: "pagination",
-//             // route: "/sections/navigation/pagination",
-//             // component: <Pagination />,
-//           },
-//         ],
-//       },
-//       {
-//         // name: "input areas",
-//         // description: "See all input areas",
-//         // dropdown: true,
-//         collapse: [
-//           {
-//             // name: "inputs",
-//             // route: "/sections/input-areas/inputs",
-//             // component: <Inputs />,
-//           },
-//           {
-//             // name: "forms",
-//             // route: "/sections/input-areas/forms",
-//             // component: <Forms />,
-//           },
-//         ],
-//       },
-//       {
-//         // name: "attention catchers",
-//         // description: "See all examples",
-//         // dropdown: true,
-//         collapse: [
-//           {
-//             // name: "alerts",
-//             // route: "/sections/attention-catchers/alerts",
-//             // component: <Alerts />,
-//           },
-//           {
-//             // name: "modals",
-//             // route: "/sections/attention-catchers/modals",
-//             // component: <Modals />,
-//           },
-//           {
-//             // name: "tooltips & popovers",
-//             // route: "/sections/attention-catchers/tooltips-popovers",
-//             // component: <TooltipsPopovers />,
-//           },
-//         ],
-//       },
+  {
+    name: "generador",
+    collapse: [
 
-// // const routes = [
-// //   {
-// //     name: "pages",
-// //     icon: <Icon>dashboard</Icon>,
-// //     columns: 1,
-// //     rowsPerColumn: 2,
-// //     collapse: [
-// //       {
-// //         name: "landing pages",
-// //         collapse: [
-// //           {
-// //             name: "about us",
-// //             route: "/pages/landing-pages/about-us",
-// //             component: <AboutUs />,
-// //           },
-// //           {
-// //             name: "contact us",
-// //             route: "/pages/landing-pages/contact-us",
-// //             component: <ContactUs />,
-// //           },
-// //           {
-// //             name: "author",
-// //             route: "/pages/landing-pages/author",
-// //             component: <Author />,
-// //           },
-// //         ],
-// //       },
-// //       {
-// //         name: "account",
-// //         collapse: [
-// //           {
-// //             name: "sign in",
-// //             route: "/pages/authentication/sign-in",
-// //             component: <SignIn />,
-// //           },
-// //         ],
-// //       },
-// //     ],
-// //   },
-// //   {
-// //     name: "sections",
-// //     icon: <Icon>view_day</Icon>,
-// //     collapse: [
-// //       {
-// //         name: "page sections",
-// //         description: "See all sections",
-// //         dropdown: true,
-// //         collapse: [
-// //           {
-// //             name: "page headers",
-// //             route: "/sections/page-sections/page-headers",
-// //             component: <PageHeaders />,
-// //           },
-// //           {
-// //             name: "features",
-// //             route: "/sections/page-sections/features",
-// //             component: <Features />,
-// //           },
-// //           {
-// //             name: "Generador",
-// //             route: "/sections/page-sections/generador",
-// //             component: <Generador />,
-// //           },
-// //         ],
-// //       },
-// //       {
-// //         name: "navigation",
-// //         description: "See all navigations",
-// //         dropdown: true,
-// //         collapse: [
-// //           {
-// //             name: "navbars",
-// //             route: "/sections/navigation/navbars",
-// //             component: <Navbars />,
-// //           },
-// //           {
-// //             name: "nav tabs",
-// //             route: "/sections/navigation/nav-tabs",
-// //             component: <NavTabs />,
-// //           },
-// //           {
-// //             name: "pagination",
-// //             route: "/sections/navigation/pagination",
-// //             component: <Pagination />,
-// //           },
-// //         ],
-// //       },
-// //       {
-// //         name: "input areas",
-// //         description: "See all input areas",
-// //         dropdown: true,
-// //         collapse: [
-// //           {
-// //             name: "inputs",
-// //             route: "/sections/input-areas/inputs",
-// //             component: <Inputs />,
-// //           },
-// //           {
-// //             name: "forms",
-// //             route: "/sections/input-areas/forms",
-// //             component: <Forms />,
-// //           },
-// //         ],
-// //       },
-// //       {
-// //         name: "attention catchers",
-// //         description: "See all examples",
-// //         dropdown: true,
-// //         collapse: [
-// //           {
-// //             name: "alerts",
-// //             route: "/sections/attention-catchers/alerts",
-// //             component: <Alerts />,
-// //           },
-// //           {
-// //             name: "modals",
-// //             route: "/sections/attention-catchers/modals",
-// //             component: <Modals />,
-// //           },
-// //           {
-// //             name: "tooltips & popovers",
-// //             route: "/sections/attention-catchers/tooltips-popovers",
-// //             component: <TooltipsPopovers />,
-// //           },
-// //         ],
-// //       },
-//       {
-//         // name: "elements",
-//         // description: "See all 32 examples",
-//         // dropdown: true,
-//         collapse: [
-//           {
-//             // name: "avatars",
-//             // route: "/sections/elements/avatars",
-//             // component: <Avatars />,
-//           },
-//           {
-//             // name: "badges",
-//             // route: "/sections/elements/badges",
-//             // component: <Badges />,
-//           },
-//           {
-//             // name: "breadcrumbs",
-//             // route: "/sections/elements/breadcrumbs",
-//             // component: <BreadcrumbsEl />,
-//           },
-//           {
-//             // name: "buttons",
-//             // route: "/sections/elements/buttons",
-//             // component: <Buttons />,
-//           },
-//           {
-//             // name: "dropdowns",
-//             // route: "/sections/elements/dropdowns",
-//             // component: <Dropdowns />,
-//           },
-//           {
-//             // name: "progress bars",
-//             // route: "/sections/elements/progress-bars",
-//             // component: <ProgressBars />,
-//           },
-//           {
-//             // name: "toggles",
-//             // route: "/sections/elements/toggles",
-//             // component: <Toggles />,
-//           },
-//           {
-//             // name: "typography",
-//             // route: "/sections/elements/typography",
-//             // component: <Typography />,
-//           },
-//         ],
-//       },
-//     ],
-//   },
-//   {
-//     // name: "docs",
-//     // icon: <Icon>article</Icon>,
-//     // collapse: [
-//       // {
-//         // name: "getting started",
-//         // description: "All about overview, quick start, license and contents",
-//         // href: "https://www.creative-tim.com/learning-lab/react/quick-start/material-kit/",
-//       },
-//       {
-//         // name: "foundation",
-//         // description: "See our colors, icons and typography",
-//         // href: "https://www.creative-tim.com/learning-lab/react/colors/material-kit/",
-//       },
-//       {
-//         // name: "components",
-//         // description: "Explore our collection of fully designed components",
-//         // href: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
-//       },
-//       {
-//         // name: "plugins",
-//         // description: "Check how you can integrate our plugins",
-//         // href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-kit/",
-//     //   },
-//     // ],
-//   },
-//   {
-//     // name: "github",
-//     // icon: <GitHubIcon />,
-    // href: "https://www.github.com/creativetimofficial/material-kit-react",
-//   },
- ];
+      {
+        name: "Generador",
+        route: "/sections/page-sections/generador",
+        component: <Generador />,
+      },
+      {
+        name: "Mapa",
+        route: "/sections/mapa",
+        component: <Mapa />,
+      },
+
+
+    ],
+  },
+
+
+
+  //   {
+  //     // name: "sections",
+  //     // icon: <Icon>view_day</Icon>,
+  //     collapse: [
+  //       {
+  //         // name: "page sections",
+  //         // description: "See all sections",
+  //         // dropdown: true,
+  //         collapse: [
+  //           {
+  //             // name: "page headers",
+  //             // route: "/sections/page-sections/page-headers",
+  //             // component: <PageHeaders />,
+  //           },
+  //           {
+  //             // name: "features",
+  //             // route: "/sections/page-sections/features",
+  //             // component: <Features />,
+  //           },
+  //           {
+  //             name: "Generador",
+  //             route: "/sections/page-sections/generador",
+  //             component: <Generador />,
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         // name: "navigation",
+  //         // description: "See all navigations",
+  //         // dropdown: true,
+  //         collapse: [
+  //           {
+  //             // name: "navbars",
+  //             // route: "/sections/navigation/navbars",
+  //             // component: <Navbars />,
+  //           },
+  //           {
+  //             // name: "nav tabs",
+  //             // route: "/sections/navigation/nav-tabs",
+  //             // component: <NavTabs />,
+  //           },
+  //           {
+  //             // name: "pagination",
+  //             // route: "/sections/navigation/pagination",
+  //             // component: <Pagination />,
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         // name: "input areas",
+  //         // description: "See all input areas",
+  //         // dropdown: true,
+  //         collapse: [
+  //           {
+  //             // name: "inputs",
+  //             // route: "/sections/input-areas/inputs",
+  //             // component: <Inputs />,
+  //           },
+  //           {
+  //             // name: "forms",
+  //             // route: "/sections/input-areas/forms",
+  //             // component: <Forms />,
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         // name: "attention catchers",
+  //         // description: "See all examples",
+  //         // dropdown: true,
+  //         collapse: [
+  //           {
+  //             // name: "alerts",
+  //             // route: "/sections/attention-catchers/alerts",
+  //             // component: <Alerts />,
+  //           },
+  //           {
+  //             // name: "modals",
+  //             // route: "/sections/attention-catchers/modals",
+  //             // component: <Modals />,
+  //           },
+  //           {
+  //             // name: "tooltips & popovers",
+  //             // route: "/sections/attention-catchers/tooltips-popovers",
+  //             // component: <TooltipsPopovers />,
+  //           },
+  //         ],
+  //       },
+
+  // // const routes = [
+  // //   {
+  // //     name: "pages",
+  // //     icon: <Icon>dashboard</Icon>,
+  // //     columns: 1,
+  // //     rowsPerColumn: 2,
+  // //     collapse: [
+  // //       {
+  // //         name: "landing pages",
+  // //         collapse: [
+  // //           {
+  // //             name: "about us",
+  // //             route: "/pages/landing-pages/about-us",
+  // //             component: <AboutUs />,
+  // //           },
+  // //           {
+  // //             name: "contact us",
+  // //             route: "/pages/landing-pages/contact-us",
+  // //             component: <ContactUs />,
+  // //           },
+  // //           {
+  // //             name: "author",
+  // //             route: "/pages/landing-pages/author",
+  // //             component: <Author />,
+  // //           },
+  // //         ],
+  // //       },
+  // //       {
+  // //         name: "account",
+  // //         collapse: [
+  // //           {
+  // //             name: "sign in",
+  // //             route: "/pages/authentication/sign-in",
+  // //             component: <SignIn />,
+  // //           },
+  // //         ],
+  // //       },
+  // //     ],
+  // //   },
+  // //   {
+  // //     name: "sections",
+  // //     icon: <Icon>view_day</Icon>,
+  // //     collapse: [
+  // //       {
+  // //         name: "page sections",
+  // //         description: "See all sections",
+  // //         dropdown: true,
+  // //         collapse: [
+  // //           {
+  // //             name: "page headers",
+  // //             route: "/sections/page-sections/page-headers",
+  // //             component: <PageHeaders />,
+  // //           },
+  // //           {
+  // //             name: "features",
+  // //             route: "/sections/page-sections/features",
+  // //             component: <Features />,
+  // //           },
+  // //           {
+  // //             name: "Generador",
+  // //             route: "/sections/page-sections/generador",
+  // //             component: <Generador />,
+  // //           },
+  // //         ],
+  // //       },
+  // //       {
+  // //         name: "navigation",
+  // //         description: "See all navigations",
+  // //         dropdown: true,
+  // //         collapse: [
+  // //           {
+  // //             name: "navbars",
+  // //             route: "/sections/navigation/navbars",
+  // //             component: <Navbars />,
+  // //           },
+  // //           {
+  // //             name: "nav tabs",
+  // //             route: "/sections/navigation/nav-tabs",
+  // //             component: <NavTabs />,
+  // //           },
+  // //           {
+  // //             name: "pagination",
+  // //             route: "/sections/navigation/pagination",
+  // //             component: <Pagination />,
+  // //           },
+  // //         ],
+  // //       },
+  // //       {
+  // //         name: "input areas",
+  // //         description: "See all input areas",
+  // //         dropdown: true,
+  // //         collapse: [
+  // //           {
+  // //             name: "inputs",
+  // //             route: "/sections/input-areas/inputs",
+  // //             component: <Inputs />,
+  // //           },
+  // //           {
+  // //             name: "forms",
+  // //             route: "/sections/input-areas/forms",
+  // //             component: <Forms />,
+  // //           },
+  // //         ],
+  // //       },
+  // //       {
+  // //         name: "attention catchers",
+  // //         description: "See all examples",
+  // //         dropdown: true,
+  // //         collapse: [
+  // //           {
+  // //             name: "alerts",
+  // //             route: "/sections/attention-catchers/alerts",
+  // //             component: <Alerts />,
+  // //           },
+  // //           {
+  // //             name: "modals",
+  // //             route: "/sections/attention-catchers/modals",
+  // //             component: <Modals />,
+  // //           },
+  // //           {
+  // //             name: "tooltips & popovers",
+  // //             route: "/sections/attention-catchers/tooltips-popovers",
+  // //             component: <TooltipsPopovers />,
+  // //           },
+  // //         ],
+  // //       },
+  //       {
+  //         // name: "elements",
+  //         // description: "See all 32 examples",
+  //         // dropdown: true,
+  //         collapse: [
+  //           {
+  //             // name: "avatars",
+  //             // route: "/sections/elements/avatars",
+  //             // component: <Avatars />,
+  //           },
+  //           {
+  //             // name: "badges",
+  //             // route: "/sections/elements/badges",
+  //             // component: <Badges />,
+  //           },
+  //           {
+  //             // name: "breadcrumbs",
+  //             // route: "/sections/elements/breadcrumbs",
+  //             // component: <BreadcrumbsEl />,
+  //           },
+  //           {
+  //             // name: "buttons",
+  //             // route: "/sections/elements/buttons",
+  //             // component: <Buttons />,
+  //           },
+  //           {
+  //             // name: "dropdowns",
+  //             // route: "/sections/elements/dropdowns",
+  //             // component: <Dropdowns />,
+  //           },
+  //           {
+  //             // name: "progress bars",
+  //             // route: "/sections/elements/progress-bars",
+  //             // component: <ProgressBars />,
+  //           },
+  //           {
+  //             // name: "toggles",
+  //             // route: "/sections/elements/toggles",
+  //             // component: <Toggles />,
+  //           },
+  //           {
+  //             // name: "typography",
+  //             // route: "/sections/elements/typography",
+  //             // component: <Typography />,
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     // name: "docs",
+  //     // icon: <Icon>article</Icon>,
+  //     // collapse: [
+  //       // {
+  //         // name: "getting started",
+  //         // description: "All about overview, quick start, license and contents",
+  //         // href: "https://www.creative-tim.com/learning-lab/react/quick-start/material-kit/",
+  //       },
+  //       {
+  //         // name: "foundation",
+  //         // description: "See our colors, icons and typography",
+  //         // href: "https://www.creative-tim.com/learning-lab/react/colors/material-kit/",
+  //       },
+  //       {
+  //         // name: "components",
+  //         // description: "Explore our collection of fully designed components",
+  //         // href: "https://www.creative-tim.com/learning-lab/react/alerts/material-kit/",
+  //       },
+  //       {
+  //         // name: "plugins",
+  //         // description: "Check how you can integrate our plugins",
+  //         // href: "https://www.creative-tim.com/learning-lab/react/datepicker/material-kit/",
+  //     //   },
+  //     // ],
+  //   },
+  //   {
+  //     // name: "github",
+  //     // icon: <GitHubIcon />,
+  // href: "https://www.github.com/creativetimofficial/material-kit-react",
+  //   },
+];
 
 export default routes;

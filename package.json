@@ -25,9 +25,13 @@
         "@fortawesome/fontawesome-svg-core": "^6.1.1",
         "@fortawesome/free-solid-svg-icons": "^6.1.1",
         "@fortawesome/react-fontawesome": "^0.2.0",
+        "@material-ui/core": "^4.12.4",
         "@mui/icons-material": "5.2.0",
+        "@mui/lab": "^5.0.0-alpha.102",
         "@mui/material": "5.2.0",
         "@mui/styled-engine": "5.2.0",
+        "@mui/styles": "^5.10.8",
+        "@react-google-maps/api": "^2.7.0",
         "@testing-library/jest-dom": "5.11.4",
         "@testing-library/react": "11.1.0",
         "@testing-library/user-event": "12.1.10",
@@ -36,6 +40,7 @@
         "firebase": "^9.9.3",
         "flatpickr": "4.6.9",
         "google-maps-react": "^2.0.6",
+        "material-table": "1.69.3",
         "mssql": "^9.0.1",
         "pdf-to-base64": "^1.0.3",
         "prop-types": "15.7.2",
@@ -50,8 +55,7 @@
         "react-syntax-highlighter": "15.4.5",
         "sequelize": "^6.21.3",
         "tedious": "^15.0.1",
-        "web-vitals": "1.0.1",
-        "@react-google-maps/api": "^2.7.0"
+        "web-vitals": "1.0.1"
     },
     "scripts": {
         "start": "react-scripts start",
