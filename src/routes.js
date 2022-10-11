@@ -96,12 +96,11 @@ const routes = [
       },
     ],
   },
-  //contact us
   {
     name: "Formularios solicitantes",
     collapse: [
       {
-        name: "Formulario Solicitantes usuario empresa",
+        name: "Formulario Solicitantes Empresa",
         route: "/pages/landing-pages/registro-empresa",
         component: <ContactUs />,
       },
