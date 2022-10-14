@@ -51,8 +51,8 @@ import Author from "layouts/pages/landing-pages/author";
 import SignIn from "layouts/pages/authentication/sign-in";
 import FormsAdmin from "layouts/pages/landing-pages/formsadmin/formularioempresaadmin";
 import FormsAdmintabla from "layouts/pages/landing-pages/formsadmin/solicitudespendientes";
-
-
+import FormsAdmintablaaprobada from "layouts/pages/landing-pages/formsadmin/solicitudesaprobadas";
+import FormsAdminNft from "layouts/pages/landing-pages/formsadmin/formularioempresanft";
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
 import Generador from "layouts/sections/generador";
@@ -129,6 +129,16 @@ const routes = [
         name: "Solicitudes pendientes",
         route: "/pages/landing-pages/solicitudespendientes",
         component: <FormsAdmintabla />,
+      },
+      {
+        name: "Solicitudes aprobadas",
+        route: "/pages/landing-pages/solicitudesaprobadas",
+        component: <FormsAdmintablaaprobada />,
+      },
+      {
+        name: "Solicitudes empresas nft",
+        route: "/pages/landing-pages/formularioempresanft",
+        component: <FormsAdminNft />,
       },
     ],
   },

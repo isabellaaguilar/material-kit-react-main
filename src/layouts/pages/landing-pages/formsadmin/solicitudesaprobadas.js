@@ -66,7 +66,7 @@ const Formulario = () => {
         var solicitudesEmpresa = await axios.post(
             "http://localhost:3001/api/obtenerSolicitudesEmpresa",
             {
-                estaAprobado: true,
+                estaAprobado: false,
             }
         );
         let x = [];
