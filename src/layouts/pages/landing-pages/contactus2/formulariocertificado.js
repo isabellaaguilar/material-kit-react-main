@@ -78,12 +78,12 @@ const Formulario = () => {
     <Fragment>
       <DefaultNavbar
         routes={routes}
-        // action={{
-        //   type: "external",
-        //   route: "https://www.creative-tim.com/product/material-kit-react",
-        //   label: "free download",
-        //   color: "info",
-        // }}
+      // action={{
+      //   type: "external",
+      //   route: "https://www.creative-tim.com/product/material-kit-react",
+      //   label: "free download",
+      //   color: "info",
+      // }}
       />
       <MKBox component="section" py={12}>
         <Container>
@@ -148,13 +148,16 @@ const Formulario = () => {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} my={2}>
-                  <button type="button" onClick={enviarDatos}>
-                   Enviar formulario 
+                  <button type="button" onClick={enviarDatos}
+                    variant="contained"
+                    color="secondary"
+                  >
+                    Enviar formulario
                   </button>
                 </Grid>
-                  <MKTypography variant="p" mb={1}>
-            Suba el archivo en formato pdf y presione Enviar formulario
-          </MKTypography>
+                <MKTypography variant="p" mb={1}>
+                  Suba el archivo en formato pdf y presione Enviar formulario
+                </MKTypography>
               </MKBox>
             </MKBox>
           </Grid>

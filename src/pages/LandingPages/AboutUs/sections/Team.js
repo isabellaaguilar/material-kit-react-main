@@ -48,7 +48,7 @@ function Team() {
               Ecotrade Team
             </MKTypography>
             <MKTypography variant="body2" color="white" opacity={0.8}>
-              somos el equipo que buscas
+              Equipo de trabajo.
             </MKTypography>
           </Grid>
         </Grid>
@@ -59,7 +59,7 @@ function Team() {
                 image={team1}
                 name="Isabella Aguilar"
                 position={{ color: "info", label: "React development" }}
-                description="Encargada de la programacion de la pagina."
+                description="Encargada de la programación de la página."
               />
             </MKBox>
           </Grid>
@@ -69,7 +69,7 @@ function Team() {
                 image={team2}
                 name="Jose David Hidalgo"
                 position={{ color: "info", label: "Coordinador" }}
-                description="Coordinador, es el encargado de que todos cumplan las funciones, ademas de el encargado del diseño"
+                description="Coordinador, es el encargado de que todos cumplan las funciones, además de el encargado del diseño"
               />
             </MKBox>
           </Grid>
@@ -79,7 +79,7 @@ function Team() {
                 image={team3}
                 name="Karla Calderón"
                 position={{ color: "info", label: "Diseñadora" }}
-                description="Encargada del diseño de la pagina."
+                description="Encargada del diseño de la página."
               />
             </MKBox>
           </Grid>
@@ -89,7 +89,7 @@ function Team() {
                 image={team4}
                 name="Eytan Sierra "
                 position={{ color: "info", label: "Diseñador" }}
-                description="Encargado del diseño de la pagina"
+                description="Encargado del diseño de la página y complemento."
               />
             </MKBox>
           </Grid>

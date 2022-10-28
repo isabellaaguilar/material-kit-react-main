@@ -52,6 +52,9 @@ import SignIn from "layouts/pages/authentication/sign-in";
 import FormsAdmin from "layouts/pages/landing-pages/formsadmin/formularioempresaadmin";
 import FormsAdmintabla from "layouts/pages/landing-pages/formsadmin/solicitudespendientes";
 import FormsAdmintablaaprobada from "layouts/pages/landing-pages/formsadmin/solicitudesaprobadas";
+import FormsAdmintablanft from "layouts/pages/landing-pages/formsadmin/solicitudespendientesNFT";
+import FormsAdmintablaaprobadanft from "layouts/pages/landing-pages/formsadmin/solicitudesaprobadasNFT";
+
 import FormsAdminNft from "layouts/pages/landing-pages/formsadmin/formularioempresanft";
 // Sections
 import PageHeaders from "layouts/sections/page-sections/page-headers";
@@ -104,10 +107,15 @@ const routes = [
         route: "/pages/landing-pages/registro-empresa",
         component: <ContactUs />,
       },
+      // {
+      //   name: "Formulario solicitante certificado",
+      //   route: "/pages/landing-pages/formulario-certificado",
+      //   component: <ContactUs2 />,
+      // },
       {
-        name: "Formulario solicitante certificado",
-        route: "/pages/landing-pages/formulario-certificado",
-        component: <ContactUs2 />,
+        name: "Solicitudes empresas nft",
+        route: "/pages/landing-pages/formularioempresanft",
+        component: <FormsAdminNft />,
       },
       {
         name: "Formulario evidencias",
@@ -126,19 +134,25 @@ const routes = [
         component: <FormsAdmin />,
       },
       {
-        name: "Solicitudes pendientes",
+        name: "Solicitudes aprobadas",
         route: "/pages/landing-pages/solicitudespendientes",
         component: <FormsAdmintabla />,
       },
       {
-        name: "Solicitudes aprobadas",
+        name: "Solicitudes pendientes",
         route: "/pages/landing-pages/solicitudesaprobadas",
         component: <FormsAdmintablaaprobada />,
       },
+
       {
-        name: "Solicitudes empresas nft",
-        route: "/pages/landing-pages/formularioempresanft",
-        component: <FormsAdminNft />,
+        name: "Solicitudes pendientesNFT",
+        route: "/pages/landing-pages/solicitudespendientesNFT",
+        component: <FormsAdmintablanft />,
+      },
+      {
+        name: "Solicitudes aprobadasNFT",
+        route: "/pages/landing-pages/solicitudesaprobadasNft",
+        component: <FormsAdmintablaaprobadanft />,
       },
     ],
   },

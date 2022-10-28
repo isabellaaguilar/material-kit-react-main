@@ -30,8 +30,8 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
 import data from "pages/Presentation/sections/data/pagesData";
-import nft2 from "pages/imagenes/nft2.png";
-import nft1 from "pages/imagenes/nft1.png";
+import nft2 from "pages/imagenes/nft2.jpg";
+import nft1 from "pages/imagenes/nft1.jpg";
 import logo from "pages/imagenes/logo.jpg";
 
 
@@ -60,15 +60,15 @@ function Pages() {
           <MKBadge
             variant="contained"
             color="info"
-            badgeContent="Conocenos"
+            badgeContent="Metodología"
             container
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-          Nuestro marco de trabajo
+            Nuestro marco de trabajo
           </MKTypography>
           <MKTypography variant="body1" color="text">
-           La manera mas sencilla de dar un mensaje
+            La manera mas sencilla de dar un mensaje
             <br /> es con acciones
           </MKTypography>
         </Grid>
@@ -82,28 +82,37 @@ function Pages() {
           </Grid>
           <Grid item xs={12} md={5} sx={{ ml: "13%" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={nft2} alt="nft2"   width="50%" />
+              <MKBox component="img" src={nft2} alt="nft2" width="50%" />
             </MKBox>
           </Grid>
-            <Grid item xs={12} md={5} sx={{ ml: "2%" }}>
+          <Grid item xs={12} md={5} sx={{ ml: "2%" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={nft1} alt="nft1"   width="50%" />
+              <MKBox component="img" src={nft1} alt="nft1" width="50%" />
             </MKBox>
           </Grid>
           <Grid item xs={12} lg={3} sx={{ ml: "36%" }}>
             <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
               <MKTypography variant="h3" fontWeight="bold" mb={1}>
-               Ejemplos de nuestros NFTs.
+                Ejemplos de nuestros NFTs.
               </MKTypography>
               <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-              Nuestros procesos son gratuitos, el pago es a la naturaleza y el bienestar es para todos.
+                Nuestros procesos son gratuitos, el pago es a la naturaleza y el bienestar es para todos.
               </MKTypography>
             </MKBox>
           </Grid>
-             <Grid item xs={12} md={5} sx={{ ml: "30%" }}>
+          <Grid item xs={12} md={5} sx={{ ml: "30%" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={logo} alt="logo"   width="100%" />
+              <MKBox component="img" src={logo} alt="logo" width="100%" />
             </MKBox>
+            <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
+              Nuestro logo simboliza el planeta Tierra, utiliza colores de verdes suaves para transmitir calidez y eficacia. Los colores azules suaves pasteles representan tecnología y caridad.
+            </MKTypography>
+            <MKTypography variant="h2" fontWeight="bold">
+              EcoTrade
+              <MKTypography variant="body1" color="text">
+                Intercambio social, ecónomico y financiero invertidos en el futuro de la humanidad.
+              </MKTypography>
+            </MKTypography>
           </Grid>
         </Grid>
       </Container>

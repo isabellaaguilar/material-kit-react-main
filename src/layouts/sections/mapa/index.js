@@ -1,7 +1,7 @@
 
 
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 // import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import BaseLayout from "layouts/sections/components/BaseLayout";
 import react from "react";
@@ -12,30 +12,6 @@ import React, { useState } from "react";
 import { GoogleMap, InfoWindow, useLoadScript, Marker } from "@react-google-maps/api";
 
 
-const markers = [
-  {
-    id: 1,
-    name: "La carpio",
-    position: { lat: 9.9624787, lng: -84.1498769 }
-  },
-  {
-    id: 2,
-    name: "CEDES Don Bosco",
-    position: { lat: 9.8893994, lng: -84.0895493 }
-  },
-  {
-    id: 3,
-    name: "San Felipe aqui matan",
-    position: { lat: 9.9075497, lng: -84.1402658 }
-  },
-  {
-    id: 4,
-    name: "Santa Teresa Cobano",
-    position: { lat: 9.6376442, lng: -85.1954562 }
-  }
-];
-
-
 const Mapa = () => {
 
   const { isLoaded } = useLoadScript({
@@ -44,6 +20,7 @@ const Mapa = () => {
   })
 
   const [activeMarker, setActiveMarker] = useState(null);
+  const [solicitud, setSolicitudes] = useState([])
 
   const handleActiveMarker = (marker) => {
     if (marker === activeMarker)
@@ -55,12 +32,30 @@ const Mapa = () => {
 
   const handleOnLoad = (map) => {
     const bounds = new google.maps.LatLngBounds();
-    markers.forEach(({ position }) => bounds.extend(position));
+    solicitud.forEach(({ position }) => bounds.extend(position));
     map.fitBounds(bounds);
   };
 
 
+  useEffect(async () => {
+    var solicitudesEmpresa = await axios.post(
+      "http://localhost:3001/api/obtenerSolicitudesEmpresa",
+      {
+        estaAprobado: true,
+      }
+    );
 
+    let x = [];
+    solicitudesEmpresa.data.solicitudEmpresaPendientes.map((solicitud, i) => {
+      x.push({
+        id: i,
+        name: solicitud.nombre,
+        position: { lat: Number(solicitud.longitud), lng: Number(solicitud.latitud) }
+      });
+    });
+
+    setSolicitudes(x);
+  }, [])
 
 
   if (!isLoaded) return <div>Loading...</div>;
@@ -79,7 +74,7 @@ const Mapa = () => {
         onLoad={handleOnLoad}
         onClick={() => setActiveMarker(null)}
       >
-        {markers.map(({ id, name, position }) => (
+        {solicitud.map(({ id, name, position }) => (
           <Marker
             key={id}
             position={position}
@@ -87,7 +82,7 @@ const Mapa = () => {
           >
             {activeMarker === id ? (
               <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                <div>{name}</div>
+                <div>Nombre de empresa: {name}</div>
               </InfoWindow>
             ) : null}
           </Marker>

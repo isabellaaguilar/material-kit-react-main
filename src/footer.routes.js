@@ -73,8 +73,8 @@ export default {
     },
   ],
   copyright: (
-    <MKTypography variant="button"  fontWeight="regular" >
-      All rights reserved. Copyright &copy; {date} Ecotrade by{" "}
+    <MKTypography variant="button" fontWeight="regular" >
+      Expotec {date}. Ecotrade by Isabella Aguilar, Karla Calderón, José David, Eytan Sierra.
       <MKTypography
         component="a"
         href="https://www.creative-tim.com"
@@ -83,9 +83,9 @@ export default {
         variant="button"
         fontWeight="regular"
       >
-        Creative Tim
+
       </MKTypography>
-      .
+
     </MKTypography>
   ),
 };

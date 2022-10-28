@@ -35,7 +35,11 @@ function Newsletter() {
           <Grid item sx={12} md={6} >
             <MKTypography variant="h4">Somos Ecotrade, somos innovación</MKTypography>
             <MKTypography variant="body2" color="text" mb={3}>
-            Ofrecemos certificados de manera eficaz y rapida.
+
+            </MKTypography>
+            <MKTypography variant="p" color="text" mb={3}> Ofrecemos reconocimientos de manera eficaz y rápida.
+              Nuestro logo representa esta nube tecnología aplicada al bienestar del mundo, nuestros colores están inspirados en el medio ambiente y la tecnología.
+              La marca, EcoTrade, de nuestros NFTs representa el compromiso de este proyecto con contribuir con el medio ambiente
             </MKTypography>
             {/* <Grid container spacing={1}>
               <Grid item xs={8}>

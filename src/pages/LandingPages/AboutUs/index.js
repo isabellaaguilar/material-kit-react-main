@@ -53,7 +53,7 @@ function AboutUs() {
         // }}
         transparent
         light
-      />  
+      />
       <MKBox /// centra todo lo que esta como el titulo etc..
         minHeight="75vh"
         width="100%"
@@ -89,13 +89,14 @@ function AboutUs() {
                 },
               })}
             >
-             Ecotrade
+              Ecotrade
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-             Busca si tu empresa soñada esta en nuestras filas.
+              Obten tus bienes y servicios con empresas con conciencia ambiental.
             </MKTypography>
-            <MKButton color="default" sx={{ color: ({ palette: { dark } }) => dark.main }}>
-              crar cuenta
+
+            <MKButton color="default" href="http://localhost:3000/pages/authentication/sign-in" sx={{ color: ({ palette: { dark } }) => dark.main }}>
+              Crear cuenta
             </MKButton>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
               {/* encuentranos en */}

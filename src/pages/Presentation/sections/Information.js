@@ -42,12 +42,12 @@ function Information() {
                 // icon="touch_app"
                 title={
                   <>
-              Importancia
+                    Importancia
                     <br />
-                    
+
                   </>
                 }
-                description="La elaboración de los certificados y asesorías para llevar a cabo el proceso es lento y arduo. Se busca hacer de manera eficaz y automatizada el proceso de certificación. 
+                description="Se pretende brindar un medio eficaz a las empresas para validar sus esfuerzos y que además esto tenga repercusión en el alcance que tengan hacia el público. 
 "
               />
               <RotatingCardBack
@@ -84,14 +84,14 @@ function Information() {
                 <DefaultInfoCard
                   icon="price_change"
                   title="Ahorra tiempo y dinero"
-                  description="Este software está realizado para optimizar los procesos actuales, y gracias a esta solución vemos mejoras en tiempo, dinero y ambiente."
+                  description="Este software está realizado para dar otra alternativa añadida a los procesos de certificación actuales, haciéndolo de una forma más entretenida para ver mejoras tanto en la cantidad de consumidores, en el dinero y en la cantidad de producción, cómo el impacto sobre el medio ambiente positivo."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="devices"
                   title="Tecnología Moderna"
-                  description="Es adaptable a las nuevas tecnologías multiplataforma."
+                  description="Es adaptable a las nuevas tecnologías multiplataforma. Al utilizar una tecnología tan moderna, llama la atención de una mayor cantidad de persona."
                 />
               </Grid>
             </Grid>

@@ -126,7 +126,7 @@ const Formulario = () => {
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes pendientes de empresas"
+                title="Solicitudes Aprobadas de empresas"
                 actions={[
                     {
                         icon: 'check',

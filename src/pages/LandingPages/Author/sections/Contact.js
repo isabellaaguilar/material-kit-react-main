@@ -186,7 +186,7 @@ function Contact() {
                       ml="auto"
                     >
                       <MKButton variant="gradient" color="info">
-                        Send Message
+                        Enviar
                       </MKButton>
                     </Grid>
                   </MKBox>

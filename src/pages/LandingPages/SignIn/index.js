@@ -46,67 +46,104 @@ import { useNavigate } from 'react-router-dom';
 import routes from "routes";
 
 // Images
-import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import bgImage from "assets/images/bg-sign-in-basic.jpg";
 
 function SignInBasic() {
-  
+
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const [datos, setDatos] = useState({
+    email: "",
+    password: ""
+  });
+
+
+  const handleInputChange = (event) => {
+    setDatos({
+      ...datos,
+      [event.target.name]: event.target.value
+    })
+
+  }
 
 
   const logInGoogle = () => {
 
-const provider = new GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
     const auth = getAuth();
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
 
 
-    
-    axios
-      .post("/conectarUsuarioGoogle", {
-        nombre: user.displayName,
-        email: user.email
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
+
+        axios
+          .post("/conectarUsuarioGoogle", {
+            nombre: user.displayName,
+            email: user.email
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+        // console.log(user)
+        // history.push('/presentation')
+
+        navigate('/presentation');
+
+
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
       });
-    // console.log(user)
-    // history.push('/presentation')
-
-    navigate('/presentation');
-
-    
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
   }
 
+  const logIn = async () => {
+    try
+    {
+      const login = await axios.post("http://localhost:3001/api/login", {
+        correo: datos.email,
+        password: datos.password
+      })
+
+      document.cookie = `token=${login.data.token}; max-age=${60 * 3}; path=/; samesite=strict`
+
+    } catch (err)
+    {
+      console.error(err)
+    }
+  }
+
+  const verificarCookie = async () => {
+    await axios.post("http://localhost:3001/api/verificarSiExisteToken", null, {
+      headers: {
+        'Authorization': `${document.cookie}`
+      }
+    })
+  }
 
   return (
     <>
       <DefaultNavbar
         routes={routes}
-     
+
         transparent
         light
       />
@@ -167,10 +204,10 @@ signInWithPopup(auth, provider)
               <MKBox pt={4} pb={3} px={3}>
                 <MKBox component="form" role="form">
                   <MKBox mb={2}>
-                    <MKInput type="email" label="Email" fullWidth />
+                    <MKInput type="email" onChange={handleInputChange} name="email" label="Email" fullWidth />
                   </MKBox>
                   <MKBox mb={2}>
-                    <MKInput type="password" label="Password" fullWidth />
+                    <MKInput type="password" onChange={handleInputChange} name="password" label="Password" fullWidth />
                   </MKBox>
                   <MKBox display="flex" alignItems="center" ml={-1}>
                     <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -178,14 +215,16 @@ signInWithPopup(auth, provider)
                       variant="button"
                       fontWeight="regular"
                       color="text"
-                      onClick={handleSetRememberMe}
+                      onClick={verificarCookie}
                       sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
                     >
                       &nbsp;&nbsp;Remember me
                     </MKTypography>
                   </MKBox>
                   <MKBox mt={4} mb={1}>
-                    <MKButton variant="gradient" color="info" fullWidth>
+                    <MKButton
+                      onClick={logIn}
+                      variant="gradient" color="info" fullWidth>
                       sign in
                     </MKButton>
                   </MKBox>

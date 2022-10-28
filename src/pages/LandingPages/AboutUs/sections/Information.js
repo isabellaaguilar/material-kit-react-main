@@ -14,8 +14,10 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+import ForestIcon from '@mui/icons-material/Forest';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import ParkIcon from "@mui/icons-material/Park";
 
 // Ecotrade React components
 import MKBox from "components/MKBox";
@@ -45,16 +47,16 @@ function Information() {
                   <DefaultInfoCard
                     icon="payments"
                     title="Empresas"
-                    description="Los NFT seraan entregado a las empresas que cumplan los requisitos para las insignias"
+                    description="Las empresas ya registradas pasan por un proceso de verificación, cuando éste es aprobado, se le entrega un NFT a la empresa por cumplir con los requisitos ambientales."
                   />
                 </MKBox>
               </Grid>
               <Grid item xs={12} md={6}>
                 <MKBox mb={{ xs: 5, md: 0 }}>
                   <DefaultInfoCard
-                    icon="apps"
-                    title="Ambiente"
-                    description="promovemos el cuido del ambiente"
+                    icon="Forest"
+                    title="Ambiente y bienes sociales"
+                    description=" Mediante el funcionamiento de esta página se pretende generar un mayor interés en las empresas para producir sus bienes y servicios de forma conciente, además, que los consumidores puedan buscar este tipo de empresas con conciencia ambiental."
                   />
                 </MKBox>
               </Grid>
@@ -63,7 +65,7 @@ function Information() {
                   <DefaultInfoCard
                     icon="3p"
                     title="Bienes sociales"
-                    description="Promovemos las ayudas sociales"
+                    description="El usuario en modo espectador podrá buscar empresas que tengan acciones para contribuir el medio ambiente y además, podrán apreciar el arte de los NFT obtenidos como recompensa."
                   />
                 </MKBox>
               </Grid>
@@ -72,13 +74,13 @@ function Information() {
           <Grid item xs={12} lg={4} sx={{ ml: "auto", mt: { xs: 3, lg: 0 } }}>
             <CenteredBlogCard
               image="https://images.ctfassets.net/b4k16c7lw5ut/2gc1UApE6TudBzFAe6qaVp/b83dc50bf970447071a1294cf87e331b/watermark-free-video-editor__1_.jpg?w=1920&h=1080&q=50&fm=webp"
-              title="preguntas frecuente"
-              description="Si tienes alguna pregunta frecuente sobre lo que hacemos."
+              title="Más información"
+              description="Conozca acerca del proyecto."
               action={{
                 type: "internal",
                 route: "pages/company/about-us",
                 color: "info",
-                label: "mas informacion",
+                label: "Leer",
               }}
             />
           </Grid>

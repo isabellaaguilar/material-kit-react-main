@@ -16,12 +16,13 @@ Coded by www.creative-tim.com
 // Sections components
 import BaseLayout from "layouts/sections/components/BaseLayout";
 import { useState } from "react";
-import axios  from "axios"
+import axios from "axios"
+import { Margin } from "@mui/icons-material";
 
 
 
 function generador() {
-  
+
   const [state, setState] = useState(null);
 
   function setNFT(nft) {
@@ -29,13 +30,13 @@ function generador() {
   }
 
 
- async  function salir(){
-      var res = await axios({
-        url:'http://localhost:3001/api/generador',
-         method: 'GET',
-        mode: 'no-cors'
+  async function salir() {
+    var res = await axios({
+      url: 'http://localhost:3001/api/generador',
+      method: 'GET',
+      mode: 'no-cors'
     })
-   	const data = res.data.imagenes[0];
+    const data = res.data.imagenes[0];
     setNFT(data)
   }
 
@@ -45,14 +46,14 @@ function generador() {
     <BaseLayout
       title="Generador NFT"
       breadcrumb={[
-         { label: "About us", route: "pages/landing-pages/about-us" },
+        { label: "About us", route: "pages/landing-pages/about-us" },
         // { label: "Page Headers" },
       ]}
     >
 
       <button onClick={salir} >Generar</button>
-      <img src={state} width="1280" height="600" className="NFT"  ></img>
-     
+      <img src={state} width="480" height="400" className="NFT" style={{ display: 'flex', justifyContent: 'center' }} ></img>
+
     </BaseLayout>
   );
 }

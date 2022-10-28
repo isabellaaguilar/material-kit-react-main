@@ -39,12 +39,12 @@ function ContactUs() {
       <MKBox position="fixed" top="0.5rem" width="100%">
         <DefaultNavbar
           routes={routes}
-          // action={{
-          //   type: "external",
-          //   route: "https://www.creative-tim.com/product/material-kit-react",
-          //   label: "free download",
-          //   color: "info",
-          // }}
+        // action={{
+        //   type: "external",
+        //   route: "https://www.creative-tim.com/product/material-kit-react",
+        //   label: "free download",
+        //   color: "info",
+        // }}
         />
       </MKBox>
       <Grid container spacing={3} alignItems="center">
@@ -90,7 +90,7 @@ function ContactUs() {
               mt={-3}
             >
               <MKTypography variant="h3" color="white">
-                Llena el formulario con tu informacion  
+                Llena el formulario con tu informacion
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
@@ -130,8 +130,8 @@ function ContactUs() {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="gradient" color="info">
-                    Send Message
+                  <MKButton type="submit" variant="gradient" color="secondary">
+                    Enviar
                   </MKButton>
                 </Grid>
               </MKBox>

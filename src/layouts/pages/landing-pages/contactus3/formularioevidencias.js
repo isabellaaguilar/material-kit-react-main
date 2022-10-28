@@ -111,7 +111,7 @@ const Formulario = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <MKTypography variant="h5" mb={1}>
-                      subir imagenes
+                      Subir imagenes
                     </MKTypography>
                     <MKInput
                       type="file"
@@ -120,7 +120,7 @@ const Formulario = () => {
                       fullWidth
                     />
                     <MKTypography variant="h5" mb={1}>
-                      subir videos
+                      Subir videos
                     </MKTypography>
                     <MKInput
                       type="file"
@@ -129,7 +129,7 @@ const Formulario = () => {
                       fullWidth
                     />
                     <MKTypography variant="h5" mb={1}>
-                      subir pdf
+                      Subir pdf
                     </MKTypography>
                     <MKInput
                       type="file"
@@ -181,7 +181,10 @@ const Formulario = () => {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} my={2}>
-                  <button type="button" onClick={enviarDatos}>
+                  <button type="button" onClick={enviarDatos}
+                    variant="contained"
+                    color="secondary"
+                  >
                     Enviar formulario
                   </button>
                 </Grid>

@@ -239,8 +239,8 @@ const Formulario = () => {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} my={2}>
-                  <button type="button" onClick={enviarDatos} >
-                    Send Message
+                  <button type="button" onClick={enviarDatos} color="success">
+                    Enviar formulario
 
                   </button>
 
