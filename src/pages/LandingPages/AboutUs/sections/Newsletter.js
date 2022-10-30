@@ -54,7 +54,7 @@ function Newsletter() {
           </Grid>
           <Grid item xs={12} md={5} sx={{ ml: "auto" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={logo} alt="logo" width="100%" />
+              <MKBox component="img" src={logo} class="logoprin" alt="logo" width="100%" />
             </MKBox>
           </Grid>
         </Grid>

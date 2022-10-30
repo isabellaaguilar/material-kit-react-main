@@ -18,29 +18,41 @@ Coded by www.creative-tim.com
 
 
 
-const imagesPrefix =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages";
+import imagesPrefix from
+  "../data/imagenes/info.png";
+
+
+import imagesPrefix2 from
+  "../data/imagenes/presentacion.png";
+
+import imagesPrefix3 from
+  "../data/imagenes/signin.png";
+
+import imagesPrefix4 from
+  "../data/imagenes/mapa.png";
 
 export default [
   {
-    // image: `${imagesPrefix}/about-us.jpg`,
-    // name: "About Us Page",
+    image: `${imagesPrefix}`,
+    name: "About Us Page",
     route: "/pages/landing-pages/about-us",
   },
   {
-    // image: `${imagesPrefix}/contact.jpg`,
-    // name: "Contact Us Page",
-    route: "/pages/landing-pages/contact-us",
+    image: `${imagesPrefix2}`,
+    name: "Presentation Page",
+    route: "/pages/landing-pages/1",
   },
   {
-    // image:
-    //   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/account/signin-basic.jpg",
-    // name: "Sign In Page",
+    image: `${imagesPrefix3}`,
+    name: "Sign In Page",
     route: "/pages/authentication/sign-in",
   },
   {
-    // image: `${imagesPrefix}/author.jpg`,
-    // name: "Author Page",
-    route: "/pages/landing-pages/author",
+
+    image: `${imagesPrefix4}`,
+    name: "Mapa",
+    route: "/sections/mapa",
   },
+
 ];
+// "C:\Users\Alienware\Desktop\material-kit-react-main\src\layouts\sections\mapa"

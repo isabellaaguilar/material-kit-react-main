@@ -6,7 +6,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 // Ecotrade React components
 import MKTypography from "components/MKTypography";
-
+import css from "../src/imagenes.css";
 // Images
 import logo from "pages/imagenes/logo.jpg";
 
@@ -14,8 +14,9 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
+
     name: "Ecotrade",
-    image: logo,
+    image: logo, css,
     route: "/",
   },
   socials: [

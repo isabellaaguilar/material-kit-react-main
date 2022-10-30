@@ -16,7 +16,6 @@ const Mapa = () => {
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyBXvodJ1BTbGIVjYsnBe7cEXVUPgnM5Nus&libraries=drawing&callback=initMap"
-
   })
 
   const [activeMarker, setActiveMarker] = useState(null);
@@ -68,14 +67,20 @@ const Mapa = () => {
         { label: "About us", route: "pages/landing-pages/about-us" },
         // { label: "Page Headers" },
       ]}
+
+
     >
       <GoogleMap
         mapContainerStyle={{ width: "100%", height: "100vh" }}
         onLoad={handleOnLoad}
         onClick={() => setActiveMarker(null)}
+
+
       >
+
         {solicitud.map(({ id, name, position }) => (
           <Marker
+
             key={id}
             position={position}
             onClick={() => handleActiveMarker(id)}

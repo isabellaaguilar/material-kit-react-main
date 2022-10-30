@@ -35,7 +35,7 @@ import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.s
 function Information() {
   return (
     <MKBox component="section" py={12}>
-      {/* <Container>
+      <Container>
         <Grid
           container
           item
@@ -44,44 +44,44 @@ function Information() {
           justifyContent="center"
           sx={{ mx: "auto", textAlign: "center" }}
         >
-          <MKTypography variant="h2">Trusted by over</MKTypography>
+          {/* <MKTypography variant="h2">Trusted by over</MKTypography>
           <MKTypography variant="h2" color="info" textGradient mb={2}>
             1,679,477+ web developers
           </MKTypography>
           <MKTypography variant="body1" color="text" mb={2}>
             Many Fortune 500 companies, startups, universities and governmental institutions love
             Creative Tim&apos;s products.
-          </MKTypography>
+          </MKTypography> */}
         </Grid>
         <Grid container spacing={3} sx={{ mt: 8 }}>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-              name="Nick Willever"
+              name="Doña Liz (“Soda Liz”)"
               date="1 day ago"
-              review="This is an excellent product, the documentation is excellent and helped me get things done more efficiently."
+              review="“A veces los chiquillos me intentan comprar vasos plásticos para meter pinceles, pero prefiero darles botellas de plástico cortadas que voy recolectando porque así se reutilizan y ellos no tienen que gastar dinero, y las tapas las guardo para eventualmente de la misma manera reutilizarlas o reciclarlas”"
               rating={5}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
               color="info"
-              name="Shailesh Kushwaha"
+              name="Don Carlos (“Soda Don K”)"
               date="1 week ago"
-              review="I found solution to all my design needs from Creative Tim. I use them as a freelancer in my hobby projects for fun! And its really affordable, very humble guys !!!"
+              review="“Aquí se acumulan muchos plásticos, bolsas empaques y de todo por los productos que llegan, estamos tratando de darles mejor uso ya que a veces es demasiado plástico y no nos parece que sea justo para el ambiente, así que lo guardamos para reciclarlo en lugar de botarlo”"
               rating={5}
             />
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-              name="Samuel Kamuli"
+              name="Don Pablo (“Soda Carolina”)"
               date="3 weeks ago"
-              review="Great product. Helped me cut the time to set up a site. I used the components within instead of starting from scratch. I highly recommend for developers who want to spend more time on the backend!."
+              review="“Por dicha tenemos alternativas porque la cantidad de plásticos que se nos acumulan es impresionante y a veces uno ni sabe qué hacer con tanto”."
               rating={5}
             />
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        <Grid container spacing={3} justifyContent="center">
+        {/* <Grid container spacing={3} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
             <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={0.6} />
           </Grid>
@@ -96,15 +96,15 @@ function Information() {
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
             <MKBox
-              component="img"
-              src={digitalOceanLogo}
-              alt="DigitalOcean"
-              width="100%"
-              opacity={0.6}
+              // component="img"
+              // src={digitalOceanLogo}
+              // alt="DigitalOcean"
+              // width="100%"
+              // opacity={0.6}
             />
           </Grid>
-        </Grid>
-      </Container> */}
+        </Grid> */}
+      </Container>
     </MKBox>
   );
 }

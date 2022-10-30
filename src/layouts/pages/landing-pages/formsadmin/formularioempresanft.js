@@ -79,7 +79,12 @@ const Formulario = () => {
             <MKTypography variant="h3" mb={1}>
               Ingresa el pdf de solicitud de NFT
             </MKTypography>
-
+            <a
+              href=" https://drive.google.com/file/d/10bQh24vWfUbipyF7Bb3aIrjP3vaQmoCj/view?usp=sharing "
+              download="Ecotrade"
+            >
+              Haz clic aquí para descargar el archivo
+            </a>
           </Grid>
           <Grid container item xs={12} lg={7} sx={{ mx: "auto" }}>
             <MKBox width="100%" component="form" method="post" autocomplete="off" >

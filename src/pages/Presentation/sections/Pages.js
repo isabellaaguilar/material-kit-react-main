@@ -27,35 +27,44 @@ import MKTypography from "components/MKTypography";
 
 // Presentation page components
 import ExampleCard from "pages/Presentation/components/ExampleCard";
-
+import css from "../../../imagenes.css";
 // Data
 import data from "pages/Presentation/sections/data/pagesData";
-import nft2 from "pages/imagenes/nft2.jpg";
-import nft1 from "pages/imagenes/nft1.jpg";
+import nft1 from "pages/imagenes/nft1.png";
+import nft2 from "pages/imagenes/nft2.png";
+import nft3 from "pages/imagenes/nft3.png";
+import nft4 from "pages/imagenes/nft4.png";
+import nft5 from "pages/imagenes/nft5.png";
+import nft6 from "pages/imagenes/ntf6.png";
 import logo from "pages/imagenes/logo.jpg";
 
 
 
 function Pages() {
-  const renderData = data.map(({ image, name, route }) => (
-    <Grid item xs={12} md={6} sx={{ mb: { xs: 3, lg: 0 } }} key={name}>
+
+  const renderData = data.map(({ image, name, route, css }) => (
+    <Grid item xs={12} md={8} key={name} marginRight="25px"  >
       <Link to={route}>
         <ExampleCard image={image} name={name} display="grid" minHeight="auto" />
       </Link>
+
     </Grid>
   ));
 
   return (
-    <MKBox component="section" py={6}>
+    //se hcace para arriba
+    <MKBox component="section" py={-5}>
       <Container>
         <Grid
+
           container
           item
           xs={12}
           lg={6}
           flexDirection="column"
           alignItems="center"
-          sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
+
+          sx={{ textAlign: "center", my: -10, mx: "auto", px: 0.75 }}
         >
           <MKBadge
             variant="contained"
@@ -69,54 +78,131 @@ function Pages() {
           </MKTypography>
           <MKTypography variant="body1" color="text">
             La manera mas sencilla de dar un mensaje
-            <br /> es con acciones
+            <br /> es con acciones.
+            <br />Intercambio social, ecónomico y financiero invertidos en el futuro de la humanidad.
           </MKTypography>
         </Grid>
       </Container>
       <Container sx={{ mt: { xs: 8, lg: 16 } }}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={9} sx={{ mt: 3, px: { xs: 0, lg: 8 } }}>
-            <Grid container spacing={3}>
-              {renderData}
-            </Grid>
-          </Grid>
-          <Grid item xs={12} md={5} sx={{ ml: "13%" }}>
+        <Grid spacing={3} >
+          <div style={{ display: 'flex' }}>
+            {renderData}
+          </div>
+          {/* ml sirva para mover a la derecha las imagenes */}
+          {/* <Grid item xs={12} md={5} sx={{ ml: "50%" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={nft2} alt="nft2" width="50%" />
+              <MKBox component="img" class="nftima" src={nft2} alt="nft2" width="50%" />
             </MKBox>
           </Grid>
-          <Grid item xs={12} md={5} sx={{ ml: "2%" }}>
+          <Grid item xs={12} md={5} sx={{ ml: "40%" }}>
             <MKBox position="relative">
-              <MKBox component="img" src={nft1} alt="nft1" width="50%" />
+              <MKBox component="img" src={nft1} class="nftima" alt="nft1" width="50%" />
             </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={3} sx={{ ml: "36%" }}>
-            <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-              <MKTypography variant="h3" fontWeight="bold" mb={1}>
-                Ejemplos de nuestros NFTs.
+          </Grid> */}
+          <br></br>
+          <br></br>
+          <Grid >
+            <MKBox container
+              item
+              xs={12}
+              lg={6}
+              flexDirection="column"
+              alignItems="center"
+
+              sx={{
+                textAlign: "center", my: 10
+                , mx: "auto", px: 0.75
+              }}>
+              <MKTypography variant="h2" fontWeight="bold">
+                Ejemplos de nuestros NFT's
               </MKTypography>
-              <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-                Nuestros procesos son gratuitos, el pago es a la naturaleza y el bienestar es para todos.
-              </MKTypography>
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} md={5} sx={{ ml: "30%" }}>
-            <MKBox position="relative">
-              <MKBox component="img" src={logo} alt="logo" width="100%" />
-            </MKBox>
-            <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-              Nuestro logo simboliza el planeta Tierra, utiliza colores de verdes suaves para transmitir calidez y eficacia. Los colores azules suaves pasteles representan tecnología y caridad.
-            </MKTypography>
-            <MKTypography variant="h2" fontWeight="bold">
-              EcoTrade
               <MKTypography variant="body1" color="text">
-                Intercambio social, ecónomico y financiero invertidos en el futuro de la humanidad.
+                creado por nuestro generador de nfts
+                <br /> con tecnologia hashlips, smartcontract, blockchain.
               </MKTypography>
-            </MKTypography>
+            </MKBox>
           </Grid>
+          <Grid item xs={12} md={5} sx={{ ml: "20%", my: 20 }}>
+
+            <table class="default">
+
+              <tr>
+
+                <td>  <Grid item xs={12} md={5} sx={{ ml: "50%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" class="nftima" src={nft2} alt="nft2" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+                <td><Grid item xs={12} md={5} sx={{ ml: "40%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" src={nft1} class="nftima" alt="nft1" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+                <td><Grid item xs={12} md={5} sx={{ ml: "40%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" src={nft3} class="nftima" alt="nft3" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+              </tr>
+
+              <tr>
+
+                <td>  <Grid item xs={12} md={5} sx={{ ml: "50%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" class="nftima" src={nft4} alt="nft2" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+                <td><Grid item xs={12} md={5} sx={{ ml: "40%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" src={nft6} class="nftima" alt="nft1" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+                <td><Grid item xs={12} md={5} sx={{ ml: "40%" }}>
+                  <MKBox position="relative">
+                    <MKBox component="img" src={nft5} class="nftima" alt="nft3" width="50%" />
+                  </MKBox>
+                </Grid></td>
+
+              </tr>
+            </table>
+          </Grid>
+
+          <Grid >
+            <MKBox container
+              item
+              xs={12}
+              lg={6}
+              flexDirection="column"
+              alignItems="center"
+
+              sx={{
+                textAlign: "center", my: 10
+                , mx: "auto", px: 0.75
+              }}>
+              <MKTypography variant="h2" fontWeight="bold">
+                EcoTrade logo
+              </MKTypography>
+              <MKTypography variant="body1" color="text">
+                Nuestro logo simboliza el planeta Tierra, utiliza colores de verdes suaves para transmitir calidez y eficacia.
+                <br /> Los colores azules suaves pasteles representan tecnología y caridad.
+
+              </MKTypography>
+            </MKBox>
+          </Grid>
+
+          <Grid item xs={12} md={5} sx={{ ml: "40%" }}>
+            <MKBox component="img" src={logo} alt="logo" class="logo2" marginRight="50%" />
+
+          </Grid>
+
         </Grid>
       </Container>
-    </MKBox>
+    </MKBox >
   );
 }
 

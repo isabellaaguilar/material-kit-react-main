@@ -56,7 +56,7 @@ function Information() {
                 description="Nuestra idea se basa en la elaboración, optimización y mejoramiento, la perfección y buscar un desarrollo sostenible para el bien de las futuras generaciones del planeta por medio de las TICs."
                 action={{
                   type: "internal",
-                  route: "/sections/page-sections/page-headers",
+                  route: "/pages/authentication/sign-in",
                   label: "Empezar",
                 }}
               />
