@@ -50,6 +50,10 @@ const Formulario = () => {
         pdf: datos.pdf,
         idTipoNFT: idTipoNFT,
 
+      }, {
+        headers: {
+          'Authorization': `${document.cookie}`
+        }
       })
     event.preventDefault();
   }
