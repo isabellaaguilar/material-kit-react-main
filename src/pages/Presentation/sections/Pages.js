@@ -43,9 +43,9 @@ import logo from "pages/imagenes/logo.jpg";
 function Pages() {
 
   const renderData = data.map(({ image, name, route, css }) => (
-    <Grid item xs={12} md={8} key={name} marginRight="25px"  >
+    <Grid  item xs={12} md={8} key={name} marginRight="25px"  >
       <Link to={route}>
-        <ExampleCard image={image} name={name} display="grid" minHeight="auto" />
+        <ExampleCard   image={image}  name={name} display="grid" minHeight="auto" />
       </Link>
 
     </Grid>

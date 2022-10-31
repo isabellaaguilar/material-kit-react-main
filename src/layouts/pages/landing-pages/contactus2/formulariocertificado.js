@@ -86,7 +86,7 @@ const Formulario = () => {
       // }}
       />
       <MKBox component="section" py={12}>
-        <Container>
+        <Container >
           <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
             <MKTypography variant="h3" mb={1}>
               Completa con tu informacion

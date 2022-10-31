@@ -78,7 +78,7 @@ const Formulario = () => {
 
       />
       <MKBox component="section" py={12} >
-        <Container>
+        <Container className="container3">
           <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
             <MKTypography variant="h3" mb={1}>
               Ingresa el pdf de solicitud de NFT

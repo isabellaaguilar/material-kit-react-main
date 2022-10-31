@@ -8,7 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import MKTypography from "components/MKTypography";
 import css from "../src/imagenes.css";
 // Images
-import logo from "pages/imagenes/logo.jpg";
+ import logo from "pages/imagenes/logo.jpg";
 
 const date = new Date().getFullYear();
 
@@ -16,9 +16,9 @@ export default {
   brand: {
 
     name: "Ecotrade",
-    image: logo, css,
+    image: logo,
     route: "/",
-  },
+  }, 
   socials: [
     {
       icon: <FacebookIcon />,
@@ -74,7 +74,8 @@ export default {
     },
   ],
   copyright: (
-    <MKTypography variant="button" fontWeight="regular" >
+    
+    <MKTypography variant="button"  className="logo" fontWeight="regular" >
       Expotec {date}. Ecotrade by Isabella Aguilar, Karla Calderón, José David, Eytan Sierra.
       <MKTypography
         component="a"

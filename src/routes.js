@@ -128,11 +128,11 @@ const routes = [
   {
     name: "Formularios administrador",
     collapse: [
-      {
-        name: "Formulario inscripción empresas admin",
-        route: "/pages/landing-pages/formularioempresaadmin",
-        component: <FormsAdmin />,
-      },
+      // {
+      //   name: "Formulario inscripción empresas admin",
+      //   route: "/pages/landing-pages/formularioempresaadmin",
+      //   component: <FormsAdmin />,
+      // },
       {
         name: "Solicitudes aprobadas",
         route: "/pages/landing-pages/solicitudespendientes",
