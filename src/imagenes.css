@@ -1,0 +1,39 @@
+img{
+width: 200px;
+height: 170px;
+}
+.botongenerar{
+width: 100px;
+height: 50px;
+}
+.botongenerar:hover{
+width: 100px;
+height: 50px;
+background-color:#70ff6b;
+
+}
+button:hover{
+    background-color:#51bfff;
+}
+.NFT{
+
+width: 500px;
+height: 570px;
+
+}
+.nftima{
+  
+    width: 200px;
+    height: 200px;
+
+}
+.logo2{
+    width: 300px;
+    height: 300px;
+
+}
+.logoprin{
+    width: 500px;
+    height: 300px;
+
+}

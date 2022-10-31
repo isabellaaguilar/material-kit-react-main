@@ -51,8 +51,8 @@ function generador() {
       ]}
     >
 
-      <button onClick={salir} >Generar</button>
-      <img src={state} width="480" height="400" className="NFT" style={{ display: 'flex', justifyContent: 'center' }} ></img>
+      <button onClick={salir} className="botongenerar" >Generar</button>
+      <img src={state} width="480" height="400" className="NFT" style={{ display: 'block', justifyContent: 'center', marginLeft: "400px" }} ></img>
 
     </BaseLayout>
   );
