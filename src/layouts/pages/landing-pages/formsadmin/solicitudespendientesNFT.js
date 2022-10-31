@@ -69,7 +69,12 @@ const Formulario = () => {
             "http://localhost:3001/api/obtenerSolicitudesEmpresaNFT",
             {
                 estaAprobado: true,
+            }, {
+            headers: {
+                'Autho-rization': `${document.cookie}`
             }
+        }
+
         );
         let x = [];
         solicitudesEmpresa.data.solicitudEmpresaPendientes.map((solicitud) => {
