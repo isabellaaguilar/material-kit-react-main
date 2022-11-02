@@ -162,7 +162,7 @@ const routes = [
         name: "Solicitudes aprobadasNFT",
         route: "/pages/landing-pages/solicitudesaprobadasNft",
         component: <FormsAdmintablaaprobadanft />,
-        visible: localStorage.tipoUsuario == "superadmin"
+        visible: localStorage.tipoUsuario == "empresaadmin" 
       },
       {
         name: "Evidencias", 

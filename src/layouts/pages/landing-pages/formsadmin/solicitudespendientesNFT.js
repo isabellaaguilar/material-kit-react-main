@@ -60,7 +60,7 @@ const Formulario = () => {
 
     const aprobarSolicitud = async (id) => {
         await axios.post(
-            `http://localhost:3001/api/NFT/${id}`,
+            `http://localhost:3001/api/solicitudNFT/${id}`,
             {
                 estaAprobado: true
             }
