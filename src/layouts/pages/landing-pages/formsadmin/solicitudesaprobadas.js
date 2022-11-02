@@ -20,6 +20,17 @@ import Modal from "@mui/material/Modal";
 import Divider from "@mui/material/Divider";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
+import DownloadIcon from '@mui/icons-material/Download';
+
+
+function downloadPDF(pdf) {
+    const linkSource = `data:application/pdf;base64,${pdf}`;
+    const downloadLink = document.createElement("a");
+    const fileName = "revision.pdf";
+    downloadLink.href = linkSource;
+    downloadLink.download = fileName;
+    downloadLink.click();
+}
 
 const Formulario = () => {
     const [solicitudes, setSolicitudes] = useState([]);
@@ -127,24 +138,6 @@ const Formulario = () => {
                 columns={columns}
                 data={solicitudes}
                 title="Solicitudes aprobadas de empresas"
-                actions={[
-                    {
-                        icon: 'check',
-                        tooltip: 'Save User',
-                        hidden: true,
-                        onClick: (event, rowData) => {
-                            setNombre(rowData.nombre)
-                            setId(rowData.id)
-                            toggleModal()
-                        }
-                    },
-                    rowData => ({
-                        icon: 'delete',
-                        tooltip: 'Delete User',
-                        onClick: (event, rowData) => confirm("You want to delete " + rowData.id),
-                        disabled: rowData.birthYear < 2000
-                    })
-                ]}
                 options={{
                     actionsColumnIndex: -1
                 }}

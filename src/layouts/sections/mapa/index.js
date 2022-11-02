@@ -18,6 +18,8 @@ const Mapa = () => {
     googleMapsApiKey: "AIzaSyBXvodJ1BTbGIVjYsnBe7cEXVUPgnM5Nus&libraries=drawing&callback=initMap"
   })
 
+
+
   const [activeMarker, setActiveMarker] = useState(null);
   const [solicitud, setSolicitudes] = useState([])
 
@@ -80,7 +82,6 @@ const Mapa = () => {
         mapContainerStyle={{ width: "100%", height: "100vh" }}
         onLoad={handleOnLoad}
         onClick={() => setActiveMarker(null)}
-
 
       >
 

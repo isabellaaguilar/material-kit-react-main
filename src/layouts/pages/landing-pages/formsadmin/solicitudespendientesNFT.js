@@ -20,6 +20,7 @@ import Modal from "@mui/material/Modal";
 import Divider from "@mui/material/Divider";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
+import DownloadIcon from '@mui/icons-material/Download';
 
 function downloadPDF(pdf) {
     const linkSource = `data:application/pdf;base64,${pdf}`;
@@ -136,8 +137,8 @@ const Formulario = () => {
                         }
                     },
                     rowData => ({
-                        icon: 'delete',
-                        tooltip: 'Delete User',
+                        icon: DownloadIcon,
+                        tooltip: 'Export PDF',
                         onClick: (event, rowData) => {
                             downloadPDF(rowData.pdf)
 
