@@ -15,7 +15,17 @@ Coded by www.creative-tim.com
 
 // Ecotrade React pages
 import SignIn from "pages/LandingPages/SignIn";
+import { useNavigate } from 'react-router-dom';
 
-export default function SignInPage() {
-  return <SignIn />;
+export default function SignInPage(deslogearse = false) {
+
+  const navigate = useNavigate();
+
+
+  if(deslogearse && localStorage.tipoUsuario != undefined){
+    localStorage.removeItem("tipoUsuario");
+    navigate("/pages/authentication/sign-in")
+    window.location.reload();
+  } 
+  return  <SignIn />;
 }

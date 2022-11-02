@@ -89,10 +89,8 @@ function Presentation() {
                 },
               })}
             >
-              {/* Welcome {getAuth().currentUser.displayName ?? ""} to Ecotrade   */}
 
              Ecotrade  
-
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -101,7 +99,7 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Herramienta tecnológica que impulse la conciencia ambiental en las empresas y las personas por medio de la tecnología de los NFTs (non-fungible tokens).
+              {localStorage.tipoUsuario == "superadmin" ? "Logeado como usuario administrador de sistema" : localStorage.tipoUsuario == "empresaadmin" ? "Logeado como usuario administrador de empresa" : "Herramienta tecnológica que impulse la conciencia ambiental en las empresas y las personas por medio de la tecnología de los NFTs (non-fungible tokens"}
             </MKTypography>
           </Grid>
         </Container>

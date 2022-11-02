@@ -182,6 +182,12 @@ const routes = [
         component: <SignIn />,
         visible: true,
       },
+      {
+        name: "log out",
+        route: "/pages/authentication/log-out",
+        component: <SignIn deslogearse={true} />,
+        visible: localStorage.tipoUsuario != undefined,
+      },
     ],
   },
 
