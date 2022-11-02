@@ -123,8 +123,7 @@ function SignInBasic() {
         password: datos.password
       })
 
-      document.cookie = `token=${login.data.token}; max-age=${60 * 3}; path=/; samesite=strict`
-
+      localStorage.setItem("token", `token=${login.data.token}`)
     } catch (err)
     {
       console.error(err)
@@ -134,7 +133,7 @@ function SignInBasic() {
   const verificarCookie = async () => {
     await axios.post("http://localhost:3001/api/verificarSiExisteToken", null, {
       headers: {
-        'Authorization': `${document.cookie}`
+        'autho-rization': `${localStorage.getItem("token")}`
       }
     })
   }

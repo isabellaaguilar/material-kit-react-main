@@ -119,7 +119,7 @@ const routes = [
       },
       {
         name: "Formulario evidencias",
-        route: "/pages/landing-pages/formulario-evidencias",
+        route: "/pages/landing-pages/formulario-evidencias/:id",
         component: <ContactUs3 />,
       },
 

@@ -33,7 +33,7 @@ const Formulario = () => {
     })
 
     const [nombre, setNombre] = useState();
-    const [id, setId] = useState();
+    // const [id, setId] = useState();
 
 
     const handleInputChange = (event) => {
@@ -49,42 +49,38 @@ const Formulario = () => {
     // CON ESTE COMENTADO SE TRABAJA EL GUARDAR LOS DATOS
 
 
-    const aprobarSolicitud = async () => {
+    const aprobarSolicitud = async (id) => {
         await axios.post(
-            `http://localhost:3001/api/empresa/${id}`,
+            `http://localhost:3001/api/solicitudNFT/${id}`,
             {
-                estaAprobado: false,
-                nombre: nombre,
-                correo: datos.correo,
+                estaAprobado: true
             }
         );
 
-        toggleModal()
         setRecargar(!recargar)
 
     }
 
     useEffect(async () => {
         var solicitudesEmpresa = await axios.post(
-            "http://localhost:3001/api/obtenerSolicitudesEmpresaNFT",
+            "http://localhost:3001/api/obtenerTodasSolicitudesEmpresaNFT",
             {
-                estaAprobado: true,
+                estaAprobado: false,
             }, {
             headers: {
-                'Autho-rization': `${document.cookie}`
+                'autho-rization': `${localStorage.getItem("token")}`
             }
-        }
-
-        );
-        let x = [];
-        solicitudesEmpresa.data.solicitudEmpresaPendientes.map((solicitud) => {
-            x.push({
-                id: solicitud.id,
-                estaAprobado: solicitud.estaAprobado,
-                idEmpresa: solicitud.idEmpresa,
-                idEmpresaSolicitud: solicitud.idEmpresaSolicitud,
-            });
         });
+
+        let x = [];
+
+        solicitudesEmpresa.data.TipoNFT.map(nft => x.push({
+            idEmpresa: nft.idEmpresa,
+            idEmpresaSolicitud: nft.idTipoNFT,
+            id: nft.id,
+            estaAprobado: nft.estaAprobado
+        }))
+
         setSolicitudes(x);
     }, [recargar]);
 
@@ -125,9 +121,7 @@ const Formulario = () => {
                         icon: 'check',
                         tooltip: 'Save User',
                         onClick: (event, rowData) => {
-                            setNombre(rowData.nombre)
-                            setId(rowData.id)
-                            toggleModal()
+                            aprobarSolicitud(rowData.id)
                         }
                     },
                     rowData => ({

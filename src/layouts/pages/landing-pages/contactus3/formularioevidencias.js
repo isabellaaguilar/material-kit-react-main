@@ -8,6 +8,7 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import { useParams } from 'react-router-dom';
 
 import routes from "routes";
 import React, { Fragment, useEffect, useState } from "react";
@@ -21,6 +22,10 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 
 const Formulario = () => {
+  
+  let { id } = useParams();
+
+  console.log(id)
   const [datos, setDatos] = useState({
     Documento: "",
   });
@@ -62,6 +67,7 @@ const Formulario = () => {
     axios
       .post("http://localhost:3001/api/crearEvidencias", {
         Documento: datos.Documento,
+        idEmpresaSolicitudNFT: id
 
       })
       .then(function (response) {

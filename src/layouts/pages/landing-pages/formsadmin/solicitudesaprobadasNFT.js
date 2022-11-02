@@ -21,9 +21,14 @@ import Divider from "@mui/material/Divider";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
 
+import { useNavigate } from 'react-router-dom';
+
+
 const Formulario = () => {
+    
     const [solicitudes, setSolicitudes] = useState([]);
     const [recargar, setRecargar] = useState(false);
+    const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
     const toggleModal = () => setShow(!show);
@@ -33,7 +38,7 @@ const Formulario = () => {
     })
 
     const [nombre, setNombre] = useState();
-    const [id, setId] = useState();
+    // const [id, setId] = useState();
 
 
     const handleInputChange = (event) => {
@@ -46,41 +51,41 @@ const Formulario = () => {
         })
 
     }
+    // CON ESTE COMENTADO SE TRABAJA EL GUARDAR LOS DATOS
 
-    const aprobarEmpresa = async () => {
+
+    const aprobarSolicitud = async (id) => {
         await axios.post(
-            `http://localhost:3001/api/empresa/${id}`,
+            `http://localhost:3001/api/solicitudNFT/${id}`,
             {
-                estaAprobado: true,
-                nombre: nombre,
-                correo: datos.correo,
+                estaAprobado: true
             }
         );
 
-        toggleModal()
-        setRecargar(!recargar)
+        navigate(`/pages/landing-pages/formulario-evidencias/${id}`);
 
     }
 
     useEffect(async () => {
         var solicitudesEmpresa = await axios.post(
-            "http://localhost:3001/api/obtenerSolicitudesEmpresa",
+            "http://localhost:3001/api/obtenerSolicitudesEmpresaNFT",
             {
-                estaAprobado: false,
+                estaAprobado: true,
+            }, {
+            headers: {
+                'autho-rization': `${localStorage.getItem("token")}`
             }
-        );
-        let x = [];
-        solicitudesEmpresa.data.solicitudEmpresaPendientes.map((solicitud) => {
-            x.push({
-                id: solicitud.id,
-                nombre: solicitud.nombre,
-                latitud: solicitud.latitud,
-                longitud: solicitud.longitud,
-                fechaSolicitud: solicitud.fechaSolicitud,
-                numero: solicitud.numeroTelefono,
-                estaAprobado: solicitud.estaAprobado,
-            });
         });
+
+        let x = [];
+
+        solicitudesEmpresa.data.TipoNFT.map(nft => x.push({
+            idEmpresa: nft.idEmpresa,
+            idEmpresaSolicitud: nft.idTipoNFT,
+            id: nft.id,
+            estaAprobado: nft.estaAprobado
+        }))
+
         setSolicitudes(x);
     }, [recargar]);
 
@@ -91,25 +96,14 @@ const Formulario = () => {
             hidden: true
         },
         {
-            title: "Nombre",
-            field: "nombre",
+            title: "Id de la empresa",
+            field: "idEmpresa",
         },
         {
-            title: "Latitud",
-            field: "latitud",
+            title: "Id de la solicitud",
+            field: "idEmpresaSolicitud",
         },
-        {
-            title: "Longitud",
-            field: "longitud",
-        },
-        {
-            title: "Fecha Solicitud",
-            field: "fechaSolicitud",
-        },
-        {
-            title: "Telefono",
-            field: "numero",
-        },
+
         {
             title: "Pendiente",
             field: "estaAprobado",
@@ -119,22 +113,20 @@ const Formulario = () => {
     return (
         <BaseLayout
             breadcrumb={[
-                { label: "Solicitudes pendientes de empresas", route: "pages/landing-pages/about-us" },
+                { label: "Solicitudes pendientes de NFT", route: "pages/landing-pages/about-us" },
                 { label: "Page Headers" },
             ]}
         >
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes pendientes de empresas"
+                title="Solicitudes pendientes de NFT"
                 actions={[
                     {
                         icon: 'check',
                         tooltip: 'Save User',
                         onClick: (event, rowData) => {
-                            setNombre(rowData.nombre)
-                            setId(rowData.id)
-                            toggleModal()
+                            aprobarSolicitud(rowData.id)
                         }
                     },
                     rowData => ({
@@ -173,8 +165,8 @@ const Formulario = () => {
                             <MKButton variant="gradient" color="dark" onClick={toggleModal}>
                                 Cerrar
                             </MKButton>
-                            <MKButton onClick={aprobarEmpresa} variant="gradient" color="info">
-                                Aprobar empresa
+                            <MKButton onClick={aprobarSolicitud} variant="gradient" color="info">
+                                Aprobar Solicitud
                             </MKButton>
                         </MKBox>
                     </MKBox>

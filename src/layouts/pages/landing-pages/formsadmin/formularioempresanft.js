@@ -52,9 +52,11 @@ const Formulario = () => {
 
       }, {
         headers: {
-          'Authorization': `${document.cookie}`
+          'autho-rization': `${localStorage.getItem("token")}`
         }
       })
+
+    console.log(localStorage.getItem("token"))
     event.preventDefault();
   }
 
