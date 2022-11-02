@@ -54,6 +54,7 @@ import FormsAdmintabla from "layouts/pages/landing-pages/formsadmin/solicitudesp
 import FormsAdmintablaaprobada from "layouts/pages/landing-pages/formsadmin/solicitudesaprobadas";
 import FormsAdmintablanft from "layouts/pages/landing-pages/formsadmin/solicitudespendientesNFT";
 import FormsAdmintablaaprobadanft from "layouts/pages/landing-pages/formsadmin/solicitudesaprobadasNFT";
+import Evidenciaspendientes from "layouts/pages/landing-pages/formsadmin/evidenciaspendientes";
 
 import FormsAdminNft from "layouts/pages/landing-pages/formsadmin/formularioempresanft";
 // Sections
@@ -154,6 +155,11 @@ const routes = [
         route: "/pages/landing-pages/solicitudesaprobadasNft",
         component: <FormsAdmintablaaprobadanft />,
       },
+      {
+        name: "Evidencias", 
+        route: "/pages/landing-pages/solicitudesEvidenciasNft",
+        component: <Evidenciaspendientes />,
+      }
     ],
   },
   //sign in

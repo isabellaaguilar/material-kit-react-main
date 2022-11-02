@@ -21,15 +21,6 @@ import Divider from "@mui/material/Divider";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
 
-function downloadPDF(pdf) {
-    const linkSource = `data:application/pdf;base64,${pdf}`;
-    const downloadLink = document.createElement("a");
-    const fileName = "abc.pdf";
-    downloadLink.href = linkSource;
-    downloadLink.download = fileName;
-    downloadLink.click();
-}
-
 const Formulario = () => {
     const [solicitudes, setSolicitudes] = useState([]);
     const [recargar, setRecargar] = useState(false);
@@ -43,17 +34,17 @@ const Formulario = () => {
 
     const [nombre, setNombre] = useState();
     // const [id, setId] = useState();
-    const [Documento, setdocu] = useState();
+
 
     const handleInputChange = (event) => {
         // console.log(event.target.value)
         // esto lo que hacia era mostar literalmente todos lo que se escribia en el input letra por letra
-        setdocu({
-            ...Documento,
-            [event.target.Documento]: event.target.value
+        setDatos({
+            ...datos,
+            [event.target.name]: event.target.value
             // el name es el name que le pusimos a los inputs hace la relacion
         })
-        console.log(Documento)
+
     }
     // CON ESTE COMENTADO SE TRABAJA EL GUARDAR LOS DATOS
 
@@ -71,27 +62,25 @@ const Formulario = () => {
     }
 
     useEffect(async () => {
-        var solicitudesEmpresa = await axios.post(
-            "http://localhost:3001/api/obtenerTodasSolicitudesEmpresaNFT",
+        var evidencias = await axios.post(
+            "http://localhost:3001/api/obtenerSolicitudesEvidencias",
             {
                 estaAprobado: false,
-            }, {
-            headers: {
-                'autho-rization': `${localStorage.getItem("token")}`
             }
-        });
+        );
 
         let x = [];
 
-        solicitudesEmpresa.data.TipoNFT.map(nft => x.push({
-            idEmpresa: nft.idEmpresa,
-            idEmpresaSolicitud: nft.idTipoNFT,
+        evidencias.data.evidenciasPendientes.map(nft => x.push({
+            pdf: nft.pdf,
+            idSolicitudNFT: nft.idSolicitudNFT,
             id: nft.id,
-            estaAprobado: nft.estaAprobado,
-            pdf: nft.pdf
+            estaAprobado: nft.estaAprobado
         }))
 
+
         setSolicitudes(x);
+        
     }, [recargar]);
 
     const columns = [
@@ -101,37 +90,31 @@ const Formulario = () => {
             hidden: true
         },
         {
-            title: "Id de la empresa",
-            field: "idEmpresa",
+            title: "ID DE LA EMPRESA",
+            field: "idSolicitudNFT",
         },
         {
-            title: "Id de la solicitud",
-            field: "idEmpresaSolicitud",
+            title: "PDF",
+            field: "pdf",
+            hidden: true
         },
-
         {
             title: "Pendiente",
             field: "estaAprobado",
-        },
-        {
-            title: "pdf",
-            field: "pdf",
-            hidden: true
-
         },
     ];
 
     return (
         <BaseLayout
             breadcrumb={[
-                { label: "Solicitudes pendientes de NFT", route: "pages/landing-pages/about-us" },
+                { label: "Evidencia pendiente", route: "pages/landing-pages/about-us" },
                 { label: "Page Headers" },
             ]}
         >
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes pendientes de NFT"
+                title="Evidencia pendiente"
                 actions={[
                     {
                         icon: 'check',
@@ -143,10 +126,8 @@ const Formulario = () => {
                     rowData => ({
                         icon: 'delete',
                         tooltip: 'Delete User',
-                        onClick: (event, rowData) => {
-                            downloadPDF(rowData.pdf)
-
-                        }
+                        onClick: (event, rowData) => confirm("You want to delete " + rowData.id),
+                        disabled: rowData.birthYear < 2000
                     })
                 ]}
                 options={{
@@ -170,7 +151,7 @@ const Formulario = () => {
                         </MKBox>
                         <Divider sx={{ my: 0 }} />
                         <MKBox p={2}>
-                            <MKInput variant="standard" label="Correo electronico del usuario" onChange={(event) => rowData(event.target.Documento)} name="Documento" fullWidth
+                            <MKInput variant="standard" label="Correo electronico del usuario" onChange={handleInputChange} name="correo" fullWidth
                             />
                         </MKBox>
                         <Divider sx={{ my: 0 }} />
