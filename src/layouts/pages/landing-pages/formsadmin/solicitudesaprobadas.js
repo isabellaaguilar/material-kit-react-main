@@ -66,7 +66,7 @@ const Formulario = () => {
         var solicitudesEmpresa = await axios.post(
             "http://localhost:3001/api/obtenerSolicitudesEmpresa",
             {
-                estaAprobado: false,
+                estaAprobado: true,
             }
         );
         let x = [];
@@ -119,18 +119,19 @@ const Formulario = () => {
     return (
         <BaseLayout
             breadcrumb={[
-                { label: "Solicitudes pendientes de empresas", route: "pages/landing-pages/about-us" },
+                { label: "Solicitudes aprobadas de empresas", route: "pages/landing-pages/about-us" },
                 { label: "Page Headers" },
             ]}
         >
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes pendientes de empresas"
+                title="Solicitudes aprobadas de empresas"
                 actions={[
                     {
                         icon: 'check',
                         tooltip: 'Save User',
+                        hidden: true,
                         onClick: (event, rowData) => {
                             setNombre(rowData.nombre)
                             setId(rowData.id)

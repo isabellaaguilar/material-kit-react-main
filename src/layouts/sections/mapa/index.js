@@ -38,7 +38,7 @@ const Mapa = () => {
 
   useEffect(async () => {
     var solicitudesEmpresa = await axios.post(
-      "http://localhost:3001/api/obtenerSolicitudesEmpresa",
+      "http://localhost:3001/api/obtenerSolicitudesEmpresaMapa",
       {
         estaAprobado: true,
       }

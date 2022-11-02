@@ -51,7 +51,7 @@ export default function App() {
         return getRoutes(route.collapse);
       }
 
-      if (route.route) {
+      if (route.route && route.visible) {
         return <Route exact path={route.route} element={route.component} key={route.key} />;
       }
 

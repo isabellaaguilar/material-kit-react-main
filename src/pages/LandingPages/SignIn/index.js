@@ -124,9 +124,21 @@ function SignInBasic() {
       })
 
       localStorage.setItem("token", `token=${login.data.token}`)
+
+      if(login.data.Usuario.esAdminEmpresa == 0){
+          localStorage.setItem("tipoUsuario", `empresaadmin`)
+      }else{
+          localStorage.setItem("tipoUsuario", `superadmin`)
+      }
+
+      navigate('/presentation');
+
+      window.location.reload()
     } catch (err)
     {
+      localStorage.setItem("tipoUsuario", undefined)
       console.error(err)
+      window.location.reload()
     }
   }
 

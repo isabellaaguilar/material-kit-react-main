@@ -66,7 +66,7 @@ const Formulario = () => {
         var solicitudesEmpresa = await axios.post(
             "http://localhost:3001/api/obtenerSolicitudesEmpresa",
             {
-                estaAprobado: true,
+                estaAprobado: false,
             }
         );
         let x = [];
@@ -126,7 +126,7 @@ const Formulario = () => {
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes Aprobadas de empresas"
+                title="Solicitudes pendientes de empresas"
                 actions={[
                     {
                         icon: 'check',

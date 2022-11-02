@@ -92,11 +92,13 @@ const routes = [
         name: "Acerca de nosotros",
         route: "/pages/landing-pages/about-us",
         component: <AboutUs />,
+        visible: true
       },
       {
         name: "Presentación",
         route: "pitch.com/public/9312ed0f-f1d7-4451-8a51-ec9944d1e47f",
         component: <Author />,
+        visible: true
       },
     ],
   },
@@ -107,6 +109,7 @@ const routes = [
         name: "Formulario Solicitantes Empresa",
         route: "/pages/landing-pages/registro-empresa",
         component: <ContactUs />,
+        visible: true
       },
       // {
       //   name: "Formulario solicitante certificado",
@@ -117,11 +120,13 @@ const routes = [
         name: "Solicitudes empresas nft",
         route: "/pages/landing-pages/formularioempresanft",
         component: <FormsAdminNft />,
+        visible: localStorage.tipoUsuario == "empresaadmin"
       },
       {
         name: "Formulario evidencias",
         route: "/pages/landing-pages/formulario-evidencias/:id",
         component: <ContactUs3 />,
+        visible: localStorage.tipoUsuario == "empresaadmin"
       },
 
     ],
@@ -135,30 +140,35 @@ const routes = [
       //   component: <FormsAdmin />,
       // },
       {
-        name: "Solicitudes aprobadas",
+        name: "Solicitudes pendientes",
         route: "/pages/landing-pages/solicitudespendientes",
         component: <FormsAdmintabla />,
+        visible: localStorage.tipoUsuario == "superadmin"
       },
       {
-        name: "Solicitudes pendientes",
+        name: "Solicitudes aprobadas",
         route: "/pages/landing-pages/solicitudesaprobadas",
         component: <FormsAdmintablaaprobada />,
+        visible: localStorage.tipoUsuario == "superadmin"
       },
 
       {
         name: "Solicitudes pendientesNFT",
         route: "/pages/landing-pages/solicitudespendientesNFT",
         component: <FormsAdmintablanft />,
+        visible: localStorage.tipoUsuario == "superadmin"
       },
       {
         name: "Solicitudes aprobadasNFT",
         route: "/pages/landing-pages/solicitudesaprobadasNft",
         component: <FormsAdmintablaaprobadanft />,
+        visible: localStorage.tipoUsuario == "superadmin"
       },
       {
         name: "Evidencias", 
         route: "/pages/landing-pages/solicitudesEvidenciasNft",
         component: <Evidenciaspendientes />,
+        visible: localStorage.tipoUsuario == "superadmin"
       }
     ],
   },
@@ -170,6 +180,7 @@ const routes = [
         name: "sign in",
         route: "/pages/authentication/sign-in",
         component: <SignIn />,
+        visible: true,
       },
     ],
   },
@@ -183,11 +194,13 @@ const routes = [
         name: "Generador",
         route: "/sections/page-sections/generador",
         component: <Generador />,
+        visible: localStorage.tipoUsuario == "superadmin"
       },
       {
         name: "Mapa",
         route: "/sections/mapa",
         component: <Mapa />,
+        visible: true
       },
 
 
@@ -492,4 +505,10 @@ const routes = [
   //   },
 ];
 
-export default routes;
+const filterRoutes = []
+routes.map(x => {
+  filterRoutes.push({name: x.name, collapse: x.collapse.filter(y => y.visible)})
+})
+
+
+export default filterRoutes.filter(y => y.collapse.length != 0);
