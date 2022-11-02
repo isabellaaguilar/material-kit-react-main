@@ -21,6 +21,15 @@ import Divider from "@mui/material/Divider";
 import Slide from "@mui/material/Slide";
 import CloseIcon from "@mui/icons-material/Close";
 
+function downloadPDF(pdf) {
+    const linkSource = `data:application/pdf;base64,${pdf}`;
+    const downloadLink = document.createElement("a");
+    const fileName = "abc.pdf";
+    downloadLink.href = linkSource;
+    downloadLink.download = fileName;
+    downloadLink.click();
+}
+
 const Formulario = () => {
     const [solicitudes, setSolicitudes] = useState([]);
     const [recargar, setRecargar] = useState(false);
@@ -34,17 +43,17 @@ const Formulario = () => {
 
     const [nombre, setNombre] = useState();
     // const [id, setId] = useState();
-
+    const [Documento, setdocu] = useState();
 
     const handleInputChange = (event) => {
         // console.log(event.target.value)
         // esto lo que hacia era mostar literalmente todos lo que se escribia en el input letra por letra
-        setDatos({
-            ...datos,
-            [event.target.name]: event.target.value
+        setdocu({
+            ...Documento,
+            [event.target.Documento]: event.target.value
             // el name es el name que le pusimos a los inputs hace la relacion
         })
-
+        console.log(Documento)
     }
     // CON ESTE COMENTADO SE TRABAJA EL GUARDAR LOS DATOS
 
@@ -78,7 +87,8 @@ const Formulario = () => {
             idEmpresa: nft.idEmpresa,
             idEmpresaSolicitud: nft.idTipoNFT,
             id: nft.id,
-            estaAprobado: nft.estaAprobado
+            estaAprobado: nft.estaAprobado,
+            pdf: nft.pdf
         }))
 
         setSolicitudes(x);
@@ -102,6 +112,12 @@ const Formulario = () => {
         {
             title: "Pendiente",
             field: "estaAprobado",
+        },
+        {
+            title: "pdf",
+            field: "pdf",
+            hidden: true
+
         },
     ];
 
@@ -127,8 +143,10 @@ const Formulario = () => {
                     rowData => ({
                         icon: 'delete',
                         tooltip: 'Delete User',
-                        onClick: (event, rowData) => confirm("You want to delete " + rowData.id),
-                        disabled: rowData.birthYear < 2000
+                        onClick: (event, rowData) => {
+                            downloadPDF(rowData.pdf)
+
+                        }
                     })
                 ]}
                 options={{
@@ -152,7 +170,7 @@ const Formulario = () => {
                         </MKBox>
                         <Divider sx={{ my: 0 }} />
                         <MKBox p={2}>
-                            <MKInput variant="standard" label="Correo electronico del usuario" onChange={handleInputChange} name="correo" fullWidth
+                            <MKInput variant="standard" label="Correo electronico del usuario" onChange={(event) => rowData(event.target.Documento)} name="Documento" fullWidth
                             />
                         </MKBox>
                         <Divider sx={{ my: 0 }} />
