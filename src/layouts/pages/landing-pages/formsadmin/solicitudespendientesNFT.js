@@ -24,7 +24,7 @@ import CloseIcon from "@mui/icons-material/Close";
 function downloadPDF(pdf) {
     const linkSource = `data:application/pdf;base64,${pdf}`;
     const downloadLink = document.createElement("a");
-    const fileName = "pdf.pdf";
+    const fileName = "revision.pdf";
     downloadLink.href = linkSource;
     downloadLink.download = fileName;
     downloadLink.click();
