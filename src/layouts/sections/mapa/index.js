@@ -47,11 +47,17 @@ const Mapa = () => {
     let x = [];
     solicitudesEmpresa.data.solicitudEmpresaPendientes.map((solicitud, i) => {
       x.push({
-        id: i,
+        id: solicitud.id,
         name: solicitud.nombre,
-        position: { lat: Number(solicitud.longitud), lng: Number(solicitud.latitud) }
+        position: { lat: Number(solicitud.longitud), lng: Number(solicitud.latitud) }, 
+        nft: solicitud.NFT,
+        tipoEmpresa: solicitud.TIPOEMPRESA,
+        tipoNFT: solicitud.TIPONFT,
+
       });
     });
+
+    console.log(x)
 
     setSolicitudes(x);
   }, [])
@@ -78,7 +84,7 @@ const Mapa = () => {
 
       >
 
-        {solicitud.map(({ id, name, position }) => (
+        {solicitud.map(({ id, name, position, nft, tipoEmpresa, tipoNFT }) => (
           <Marker
 
             key={id}
@@ -87,7 +93,13 @@ const Mapa = () => {
           >
             {activeMarker === id ? (
               <InfoWindow onCloseClick={() => setActiveMarker(null)}>
-                <div>Nombre de empresa: {name}</div>
+                
+                <div>
+                  <div>Nombre de empresa: {name}</div>
+                  <div>Tipo Empresa: {tipoEmpresa}</div> 
+                  <div>Tipo NFT: {tipoNFT}</div> 
+                  <div> <img src={nft}></img></div>
+                </div>
               </InfoWindow>
             ) : null}
           </Marker>
