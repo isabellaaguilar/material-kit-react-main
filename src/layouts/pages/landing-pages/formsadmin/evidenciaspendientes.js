@@ -78,7 +78,6 @@ const Formulario = () => {
             estaAprobado: nft.estaAprobado
         }))
 
-        console.log(x)
 
         setSolicitudes(x);
         
