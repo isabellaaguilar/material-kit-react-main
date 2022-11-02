@@ -85,7 +85,7 @@ const Formulario = () => {
 
         solicitudesEmpresa.data.TipoNFT.map(nft => x.push({
             idEmpresa: nft.idEmpresa,
-            idEmpresaSolicitud: nft.idTipoNFT,
+            nombre: nft.nombre,
             id: nft.id,
             estaAprobado: nft.estaAprobado,
             pdf: nft.pdf
@@ -101,14 +101,9 @@ const Formulario = () => {
             hidden: true
         },
         {
-            title: "Id de la empresa",
-            field: "idEmpresa",
+            title: "Nombre",
+            field: "nombre",
         },
-        {
-            title: "Id de la solicitud",
-            field: "idEmpresaSolicitud",
-        },
-
         {
             title: "Pendiente",
             field: "estaAprobado",

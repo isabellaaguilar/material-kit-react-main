@@ -73,7 +73,7 @@ const Formulario = () => {
 
         evidencias.data.evidenciasPendientes.map(nft => x.push({
             pdf: nft.pdf,
-            idSolicitudNFT: nft.idSolicitudNFT,
+            nombre: nft.nombre,
             id: nft.id,
             estaAprobado: nft.estaAprobado
         }))
@@ -90,8 +90,8 @@ const Formulario = () => {
             hidden: true
         },
         {
-            title: "ID DE LA EMPRESA",
-            field: "idSolicitudNFT",
+            title: "Nombre",
+            field: "nombre",
         },
         {
             title: "PDF",
