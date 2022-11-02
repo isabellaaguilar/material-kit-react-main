@@ -51,7 +51,7 @@ const Formulario = () => {
 
     const aprobarSolicitud = async (id) => {
         await axios.post(
-            `http://localhost:3001/api//NFT/${id}`,
+            `http://localhost:3001/api/NFT/${id}`,
             {
                 estaAprobado: true
             }
@@ -62,26 +62,26 @@ const Formulario = () => {
     }
 
     useEffect(async () => {
-        var solicitudesEmpresa = await axios.post(
-            "http://localhost:3001/api/obtenerTodasSolicitudesEmpresaNFT",
+        var evidencias = await axios.post(
+            "http://localhost:3001/api/obtenerSolicitudesEvidencias",
             {
                 estaAprobado: false,
-            }, {
-            headers: {
-                'autho-rization': `${localStorage.getItem("token")}`
             }
-        });
+        );
 
         let x = [];
 
-        solicitudesEmpresa.data.TipoNFT.map(nft => x.push({
-            idEmpresa: nft.idEmpresa,
-            idEmpresaSolicitud: nft.idTipoNFT,
+        evidencias.data.evidenciasPendientes.map(nft => x.push({
+            pdf: nft.pdf,
+            idSolicitudNFT: nft.idSolicitudNFT,
             id: nft.id,
             estaAprobado: nft.estaAprobado
         }))
 
+        console.log(x)
+
         setSolicitudes(x);
+        
     }, [recargar]);
 
     const columns = [
@@ -91,14 +91,14 @@ const Formulario = () => {
             hidden: true
         },
         {
-            title: "Id de la empresa",
-            field: "idEmpresa",
+            title: "ID DE LA EMPRESA",
+            field: "idSolicitudNFT",
         },
         {
-            title: "Id de la solicitud",
-            field: "idEmpresaSolicitud",
+            title: "PDF",
+            field: "pdf",
+            hidden: true
         },
-
         {
             title: "Pendiente",
             field: "estaAprobado",
@@ -108,14 +108,14 @@ const Formulario = () => {
     return (
         <BaseLayout
             breadcrumb={[
-                { label: "Solicitudes pendientes de NFT", route: "pages/landing-pages/about-us" },
+                { label: "Evidencia pendiente", route: "pages/landing-pages/about-us" },
                 { label: "Page Headers" },
             ]}
         >
             <MaterialTable
                 columns={columns}
                 data={solicitudes}
-                title="Solicitudes pendientes de NFT"
+                title="Evidencia pendiente"
                 actions={[
                     {
                         icon: 'check',
